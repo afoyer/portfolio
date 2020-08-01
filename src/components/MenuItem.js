@@ -27,22 +27,17 @@ const itemVariants = {
 
 function MenuItem(props) {
   return (
-    <Link to={props.link}>
-      <motion.a
-        whileHover={{
-          color: ["#C70039", "#01579B", "#FFFFFF", "#C70039"],
-          transition: {
-            loop: Infinity,
-            ease: "linear",
-            duration: 2,
-          },
-        }}
-        variants={itemVariants}
-        className="menuItem"
-      >
-        {props.name}
-      </motion.a>
-    </Link>
+    <motion.div whileHover={{ scale: 1.1 }}>
+      <Link to={props.link}>
+        <motion.a
+          variants={itemVariants}
+          href={props.link}
+          className="menuItem"
+        >
+          {props.name}
+        </motion.a>
+      </Link>
+    </motion.div>
   );
 }
 export default MenuItem;

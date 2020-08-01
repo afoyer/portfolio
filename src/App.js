@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
+
 import "./styles/app.scss";
 import Nav from "./components/header";
 import { Route, Switch, useLocation } from "react-router-dom";
