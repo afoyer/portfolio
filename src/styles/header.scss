@@ -1,0 +1,90 @@
+.header {
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  top: 20px;
+  z-index: 4;
+  margin-left: auto;
+  margin-right: auto;
+  @include media("<=phone") {
+    height: 70px;
+  }
+  .addOnMenu {
+    position: relative;
+    // transform: translateX(30%);
+    // top: 58px;
+
+    width: 20%;
+    text-align: center;
+    // height: 100%;
+    // margin: auto 20px;
+
+    a {
+      margin: 0 10px;
+      display: inline;
+      justify-content: space-around;
+      font-weight: 700;
+      text-decoration: none;
+      .menuItem {
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+    }
+  }
+  .logo {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    @include media("<=600px") {
+      margin: auto;
+    }
+    a {
+      cursor: pointer;
+      vertical-align: middle;
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.3rem;
+      color: $black;
+      @include media("<=phone") {
+        font-size: 1.5rem;
+        letter-spacing: 0.7rem;
+        width: 20px;
+      }
+    }
+    .addOnMenu {
+      // transform: translateX(30%);
+      // top: 58px;
+    }
+
+    .small {
+      display: block;
+      font-size: 0.7rem;
+      @include media("<=phone") {
+        font-size: 0.8rem;
+      }
+    }
+  }
+  .addOnMenu {
+    display: flex;
+    flex-direction: row;
+    margin: auto 20px;
+    width: 200px;
+    @include media("<=phone") {
+      display: none;
+    }
+    a {
+      text-decoration: none;
+      justify-content: space-around;
+      font-weight: 700;
+
+      .menuItem {
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+    }
+    @include media("<=600px") {
+      display: none;
+    }
+  }
+}

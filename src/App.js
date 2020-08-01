@@ -1,19 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "./logo.svg";
-import "./App.css";
-import Nav from "./components/Nav";
+import "./styles/app.scss";
+import Nav from "./components/header";
+import { Route, Switch, useLocation } from "react-router-dom";
+import Banner from "./components/banner";
+
+import { AnimatePresence } from "framer-motion";
 
 function App() {
+  const location = useLocation();
   return (
-    <div className="App">
+    <>
       <Nav />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      </header>
-    </div>
+
+      <Switch location={location} key={location.key}>
+        <AnimatePresence>
+          <Route path="/" exact>
+            <Banner />
+          </Route>
+          <Route path="/projects"></Route>
+        </AnimatePresence>
+      </Switch>
+    </>
   );
 }
 
