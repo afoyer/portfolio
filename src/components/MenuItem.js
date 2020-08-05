@@ -1,8 +1,8 @@
 import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-//MenuItem is just an Anchor animated tag. Can set href and name
+//MenuItem is just an Anchor animated tag. Can set href and name using props
 
 //Framer Motion Variants. May remove if I want to make it a prop
 const itemVariants = {
@@ -10,7 +10,7 @@ const itemVariants = {
     x: 0,
     y: 0,
     opacity: 1,
-
+    borderRadius: "6px",
     color: "#FFFFFF",
     transition: {
       delay: 0,
@@ -27,15 +27,29 @@ const itemVariants = {
 
 function MenuItem(props) {
   return (
-    <motion.div whileHover={{ scale: 1.1 }}>
-      <Link to={props.link}>
-        <motion.a
+    //This div is just so I can scale on hover...
+
+    <motion.div whileHover={{ scale: 1.05 }}>
+      <Link to={props.link} style={{ textDecoration: "none" }}>
+        <motion.p
+          whileHover={{
+            color: "#212121",
+            backgroundColor: props.backgroundSelectColor,
+
+            boxShadow: "0px 5px 15px 0px #fffff",
+          }}
+          whileTap={{
+            color: "#424242",
+            backgroundColor: "#ffffff",
+            transition: {
+              duration: 0.2,
+            },
+          }}
           variants={itemVariants}
-          href={props.link}
           className="menuItem"
         >
           {props.name}
-        </motion.a>
+        </motion.p>
       </Link>
     </motion.div>
   );

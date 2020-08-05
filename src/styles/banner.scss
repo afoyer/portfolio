@@ -2,4 +2,15 @@
   display: flex;
   margin-left: 10%;
   margin-top: 100px;
+  margin-right: 10%;
+  @include media("<=phone") {
+    margin-right: 5%;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    @include media("<=phone") {
+      font-size: 2.2rem;
+    }
+  }
 }

@@ -1,27 +1,10 @@
 import React, { Component, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, Scroll } from "framer-motion";
 // import "../styles/header.scss";
 import MenuItem from "./MenuItem";
 import { Link } from "react-router-dom";
 //VARIANTS
 
-//Variants for the NavBar
-const containerVariants = {
-  open: {
-    opacity: 1,
-    width: "75%",
-    backgroundColor: "#212121",
-    "border-radius": "10px",
-  },
-  collapsed: {
-    opacity: 1,
-    width: "75%",
-    "margin-left": "10%",
-    backgroundColor: "#ffffff",
-    "border-radius": "5px",
-    transition: { delay: 0.1, duration: 0.5 },
-  },
-};
 //Logo Variants
 const textVariants = {
   open: {
@@ -44,22 +27,54 @@ function Nav(props) {
   function flip() {
     setOpen(!open);
   }
+
+  //Variants for the NavBar
+
+  const containerVariants = {
+    open: {
+      opacity: 1,
+      width: "80%",
+      backgroundColor: "#212121",
+      borderRadius: "10px",
+    },
+    collapsed: {
+      opacity: 1,
+      width: "80%",
+      backgroundColor: "#ffffff",
+      borderRadius: "5px",
+      transition: { delay: 0.1, duration: 0.5 },
+    },
+  };
   // Nav Elements outside name
   const addOn = (
     <motion.div
       transition={{
-        staggerChildren: 0.5,
+        staggerChildren: 5,
       }}
       className="addOnMenu"
     >
-      <MenuItem name="PROJECTS" link="/projects" />
+      <MenuItem
+        name="PROJECTS"
+        link="/projects"
+        backgroundSelectColor="#e0e0e0"
+      />
 
-      <MenuItem name="ABOUT" link="/about" />
+      <MenuItem name="ABOUT" link="/about" backgroundSelectColor="#e0e0e0" />
+      <MenuItem
+        name="TEST"
+        link="test"
+        backgroundSelectColor="#e0e0e0"
+      ></MenuItem>
     </motion.div>
   );
   return (
     //Header is just for positioning the upper part
-    <motion.div className="header">
+    <motion.div
+      initial={{ y: "-10%", opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ delay: 0.75, duration: 1, delayChildrenChildren: 5 }}
+      className="header"
+    >
       {/* Centers Navigation Bar and Sets up expanding animation */}
       <motion.div
         variants={containerVariants}
@@ -78,10 +93,10 @@ function Nav(props) {
           {/* INFOCONTACT STUFF */}
           <motion.div className="logo">
             {/* MY NAME */}
-            <Link to="/">
-              <motion.a variants={textVariants} className="desktop">
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <motion.p variants={textVariants} className="desktop">
                 AYMERIC<span className="small"> FOYER</span>
-              </motion.a>
+              </motion.p>
             </Link>
           </motion.div>
           {addOn}

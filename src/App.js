@@ -12,15 +12,14 @@ function App() {
   return (
     <>
       <Nav />
-
-      <Switch location={location} key={location.key}>
-        <AnimatePresence>
-          <Route path="/" exact>
+      <AnimatePresence initial={{ transition: { delayChildren: 1.5 } }}>
+        <Switch location={location} key={location.key}>
+          <Route key="home" path="/" exact>
             <Banner />
           </Route>
-          <Route path="/projects"></Route>
-        </AnimatePresence>
-      </Switch>
+          <Route key="projects" path="/projects"></Route>
+        </Switch>
+      </AnimatePresence>
     </>
   );
 }
