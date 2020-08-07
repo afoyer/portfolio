@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./styles/app.scss";
 import Nav from "./components/header";
 import { Route, Switch, useLocation } from "react-router-dom";
-import Banner from "./components/banner";
+import Home from "./pages/Home";
 
 import { AnimatePresence } from "framer-motion";
 
@@ -12,10 +12,10 @@ function App() {
   return (
     <>
       <Nav />
-      <AnimatePresence initial={{ transition: { delayChildren: 1.5 } }}>
+      <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.key}>
           <Route key="home" path="/" exact>
-            <Banner />
+            <Home />
           </Route>
           <Route key="projects" path="/projects"></Route>
         </Switch>

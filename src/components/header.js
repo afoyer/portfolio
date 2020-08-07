@@ -47,12 +47,7 @@ function Nav(props) {
   };
   // Nav Elements outside name
   const addOn = (
-    <motion.div
-      transition={{
-        staggerChildren: 5,
-      }}
-      className="addOnMenu"
-    >
+    <motion.div className="addOnMenu">
       <MenuItem
         name="PROJECTS"
         link="/projects"
