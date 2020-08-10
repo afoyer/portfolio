@@ -67,7 +67,7 @@ function Nav(props) {
     <motion.div
       initial={{ y: "-10%", opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ delay: 0.75, duration: 1, delayChildrenChildren: 5 }}
+      transition={{ delay: 6, duration: 1, delayChildrenChildren: 5 }}
       className="header"
     >
       {/* Centers Navigation Bar and Sets up expanding animation */}

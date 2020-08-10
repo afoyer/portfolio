@@ -37,7 +37,7 @@ function Banner(props) {
       exit="exit"
     >
       <motion.h1 variants={item} exit="exit">
-        Hey. I am <br class="mobile-break" /> <SlidingName list={list} />
+        Hey. I am <br className="mobile-break" /> <SlidingName list={list} />
       </motion.h1>
       <motion.h2 variants={item}>And welcome to my website.</motion.h2>
     </motion.div>
