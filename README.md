@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 <p align="center">
-  <img width="460" height="300" src="https://raw.githubusercontent.com/afoyer/portfolio/master/public/logo192.png">
+  <img width="200" height="200" src="https://raw.githubusercontent.com/afoyer/portfolio/master/public/logo192.png">
 </p>
 
 ## Available Scripts
