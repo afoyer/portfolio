@@ -1,0 +1,109 @@
+//scrollBar stuff
+@mixin scrollbars(
+  $size,
+  $foreground-color,
+  $background-color: mix($foreground-color, white, 50%)
+) {
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // For Internet Explorer
+  & {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+.project-container {
+  width: 100%;
+  display: flex;
+  @include media("<=tablet") {
+    margin: auto auto;
+  }
+  @include media("<=phone") {
+    margin: auto;
+  }
+  .dates {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+.card-container {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.card {
+  overflow: hidden;
+  box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.expanded {
+  z-index: 3;
+  overflow-y: scroll;
+
+  @include scrollbars(0, black, black);
+  background-color: #373737;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  height: 75vh;
+  @include media("<=phone") {
+    z-index: 5;
+    width: 90%;
+    height: 90vh;
+    margin: 0 auto;
+  }
+  .content {
+    display: block;
+    color: #cccccc;
+    margin: 0 5%;
+  }
+}
+
+.compact {
+  background-color: #ffffff;
+  width: 10rem;
+  height: 10rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+.expanded .title-bg {
+  top: 0;
+  width: 100%;
+  background-color: inherit;
+  .title {
+    margin: 0 20px;
+    font-size: 5em;
+    color: white;
+  }
+}
+
+.compact .title-bg {
+  width: 100%;
+  top: 0;
+  .title {
+    font-size: 1.5em;
+  }
+}

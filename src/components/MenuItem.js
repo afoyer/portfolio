@@ -13,15 +13,14 @@ const itemVariants = {
     borderRadius: "6px",
     color: "#FFFFFF",
     transition: {
-      delay: 0,
       duration: 0.5,
     },
   },
   collapsed: {
-    opacity: 1,
+    opacity: 0,
 
     color: "#212121",
-    transition: { delay: 0.1, duration: 0.2 },
+    transition: { duration: 0.2 },
   },
 };
 

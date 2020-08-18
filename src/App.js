@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./styles/app.scss";
 import Nav from "./components/header";
@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <Nav />
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence>
         <Switch location={location} key={location.key}>
           <Route key="home" path="/" exact>
             <Home />
