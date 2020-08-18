@@ -1,7 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-<a href='afoyer.github.io/portfolio' target="_blank" align="center">
+<p align="center">
   <img width="200" height="200" src="https://raw.githubusercontent.com/afoyer/portfolio/master/public/logo192.png">
-</a>
+</p>
+<p align="center">
+  A React Website with heavy use of Framer-Motion
+</p>
 
 ## Available Scripts
 
