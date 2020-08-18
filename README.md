@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 <p align="center">
   <img width="200" height="200" src="https://raw.githubusercontent.com/afoyer/portfolio/master/public/logo192.png">
 </p>
@@ -6,6 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   A React Website with heavy use of Framer-Motion
 </p>
 
+Link to [website](https:afoyer.github.io/portfolio)(currently in development) .
 ## Available Scripts
 
 In the project directory, you can run:
