@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-<p align="center">
+<a href='afoyer.github.io/portfolio' align="center">
   <img width="200" height="200" src="https://raw.githubusercontent.com/afoyer/portfolio/master/public/logo192.png">
-</p>
+</a>
 
 ## Available Scripts
 
