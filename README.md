@@ -3,6 +3,9 @@
   <img width="200" height="200" src="https://raw.githubusercontent.com/afoyer/portfolio/master/public/logo512.png">
 </p>
 <p align="center">
+  <strong>Aymeric Foyer</strong>
+</p>
+<p align="center">
   A React Website with heavy use of Framer-Motion
 </p>
 
