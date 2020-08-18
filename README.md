@@ -1,5 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-<a href='afoyer.github.io/portfolio' align="center">
+<a href='afoyer.github.io/portfolio' target="_blank" align="center">
   <img width="200" height="200" src="https://raw.githubusercontent.com/afoyer/portfolio/master/public/logo192.png">
 </a>
 
