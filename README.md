@@ -24,6 +24,7 @@ Link to [website](https://afoyer.github.io/portfolio) (currently in development)
 
 ##Credits
 
-&copy Aymeric Foyer 2020.
+&copy; Aymeric Foyer 2020.
+
 Made with :heart:.
 
