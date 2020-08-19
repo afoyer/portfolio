@@ -9,7 +9,7 @@
   A React Website with heavy use of Framer-Motion
 </p>
 
-Link to [website](https://afoyer.github.io/portfolio){:target="_blank"}(currently in development) .
+Link to [website](https://afoyer.github.io/portfolio) (currently in development) .
 ## Available Scripts
 
 In the project directory, you can run:
