@@ -1,7 +1,7 @@
 
-<p align="center">
+<a href="https://afoyer.github.io/portfolio" target="_blank" align="center">
   <img width="125" height="125" src="https://raw.githubusercontent.com/afoyer/portfolio/master/public/logo512.png">
-</p>
+</a>
 <p align="center">
   <strong>Aymeric Foyer</strong>
 </p>
