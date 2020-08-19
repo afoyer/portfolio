@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img width="200" height="200" src="https://raw.githubusercontent.com/afoyer/portfolio/master/public/logo512.png">
+  <img width="125" height="125" src="https://raw.githubusercontent.com/afoyer/portfolio/master/public/logo512.png">
 </p>
 <p align="center">
   <strong>Aymeric Foyer</strong>
