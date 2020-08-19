@@ -26,5 +26,5 @@ Link to [website](https://afoyer.github.io/portfolio) (currently in development)
 
 &copy; Aymeric Foyer 2020.
 
-Made with :heart: and a lot of :music:.
+Made with :heart: and a lot of :note:.
 
