@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ProjectItem from "./ProjectItem";
 import { motion } from "framer-motion";
 
-function ItemList() {
+function ItemList(props) {
   const [expandedDay, setCollapsedDay] = useState();
   const data = [
     {
@@ -40,6 +40,7 @@ function ItemList() {
           <ProjectItem
             key={index}
             data={item}
+            setColor={props.setColor}
             disabled={expandedDay !== index && expandedDay !== undefined}
             onExpand={() => setCollapsedDay(index)}
             onCollapse={() => setCollapsedDay()}

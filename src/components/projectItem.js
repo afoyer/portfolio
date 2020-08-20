@@ -8,7 +8,10 @@ function Content({ data, disabled }) {
         className="title"
         // layoutId="title"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { delay: 0.3 } }}
+        animate={{
+          opacity: 1,
+          transition: { delay: 0.3 },
+        }}
         style={{
           opacity: disabled ? 0.2 : 1,
           color: data.titlecolor,
@@ -24,10 +27,6 @@ function CompactProjectCard({ children, data, onExpand, disabled }) {
     <motion.div
       className="card compact"
       layoutId="expandable-card"
-      // initial={{ scale: 1 }}
-      // animate={{ scale: 1 }}
-      // whileHover={{ scale: 1.05 }}
-      // whileTap={{ scale: 0.95 }}
       onClick={disabled ? undefined : onExpand}
     >
       <motion.div
@@ -91,16 +90,18 @@ function ExpandedProjectCard({ children, data, onCollapse }) {
     </motion.div>
   );
 }
-function ProjectItem({ key, data, onCollapse, onExpand, disabled }) {
+function ProjectItem({ key, data, onCollapse, onExpand, disabled, setColor }) {
   const [isOpen, setOpen] = useState(false);
   const collapseDate = () => {
     setOpen(false);
     onCollapse();
+    setColor();
   };
 
   const expandDate = () => {
     setOpen(true);
     onExpand();
+    setColor();
   };
   return (
     <AnimateSharedLayout type="crossfade">

@@ -176,6 +176,18 @@
     height: 100%;
   }
   img {
+    -webkit-mask-image: -webkit-gradient(
+      linear,
+      right top,
+      left top,
+      from(rgba(0, 0, 0, 1) 90%),
+      to(rgba(0, 0, 0, 0))
+    );
+    mask-image: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 1) 90%,
+      rgba(0, 0, 0, 0)
+    );
     object-fit: cover;
     width: 100%;
     height: 100%;
@@ -192,9 +204,9 @@
     transform: translate(-50%, -50%);
     text-align: center;
 
-    font-size: 3.5vw;
+    font-size: 250%;
     @include media("<=445px") {
-      font-size: 12vw;
+      //   font-size: 12vw;
     }
   }
 }
