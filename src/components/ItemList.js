@@ -7,7 +7,8 @@ function ItemList() {
     {
       title: "Radiosity-Based Renderer",
       content: ["• Java-based cornell-box"],
-      imgsource: "../../public/images/render.PNG",
+      imgsource:
+        "https://raw.githubusercontent.com/afoyer/portfolio/master/public/images/render.PNG",
     },
     {
       title: "test2",

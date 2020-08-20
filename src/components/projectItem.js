@@ -3,15 +3,16 @@ import React, { useState } from "react";
 import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
 function Content({ data, disabled }) {
   return (
-    <motion.div className="title-bg">
+    <motion.div className="title-div">
       <motion.h1
         className="title"
         layoutId="title"
-        style={{ opacity: disabled ? 0.2 : 1 }}
+        style={{
+          opacity: disabled ? 0.2 : 1,
+        }}
       >
         {data.title}
       </motion.h1>
-      <motion.img src={data.imgsource} />
     </motion.div>
   );
 }
@@ -26,6 +27,7 @@ function CompactProjectCard({ children, data, onExpand, disabled }) {
       // whileTap={{ scale: 0.95 }}
       onClick={disabled ? undefined : onExpand}
     >
+      <motion.img src={data.imgsource} />
       {children}
     </motion.div>
   );
@@ -39,10 +41,25 @@ function ExpandedProjectCard({ children, data, onCollapse }) {
       layoutId="expandable-card"
       onClick={onCollapse}
     >
-      {children}
-      {data.content.map((content) => {
+      <motion.div className="title-bg">
+        <motion.img
+          onClick={(e) => {
+            console.log("clicked");
+          }}
+          src={data.imgsource}
+          initial={{ x: 20, opacity: 0 }}
+          animate={{
+            x: 0,
+            opacity: 1,
+            transition: { delay: 0.5, duration: 0.5 },
+          }}
+        />
+        {children}
+      </motion.div>
+      {data.content.map((content, index) => {
         return (
           <motion.p
+            key={index}
             className="content"
             onClick={onCollapse}
             transition={{ delay: 0.2 }}
@@ -56,7 +73,7 @@ function ExpandedProjectCard({ children, data, onCollapse }) {
     </motion.div>
   );
 }
-function ProjectItem({ data, onCollapse, onExpand, disabled }) {
+function ProjectItem({ key, data, onCollapse, onExpand, disabled }) {
   const [isOpen, setOpen] = useState(false);
   const collapseDate = () => {
     setOpen(false);
