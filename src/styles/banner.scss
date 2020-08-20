@@ -23,15 +23,12 @@
         margin: 0 15%;
         @include media("<=tablet") {
           text-align: center;
-
-          margin: 25px 0;
+          margin: 25px;
         }
         .mobile-break {
           display: none;
-          @include media("<=phone") {
-            display: none;
-
-            margin: 0;
+          @include media("<=tablet") {
+            display: inline;
           }
         }
 
@@ -39,7 +36,7 @@
         font-weight: 700;
         @include media("<=phone") {
           text-align: center;
-          font-size: 2rem;
+          font-size: 2.5rem;
           // margin-left: 15%;
         }
         span {
@@ -47,9 +44,11 @@
           display: inline-flex;
           font-size: 3rem;
           font-weight: 700;
+
+          margin-top: auto;
           @include media("<=phone") {
             // display: block;
-            font-size: 2rem;
+            font-size: 2.5rem;
           }
         }
       }
@@ -58,7 +57,7 @@
         font-size: 3rem;
         font-weight: 700;
         @include media("<=tablet") {
-          font-size: 2rem;
+          font-size: 2.7rem;
           text-align: center;
         }
         @include media("<=phone") {

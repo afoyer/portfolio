@@ -35,11 +35,14 @@
   }
   .dates {
     display: flex;
-
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     width: 100%;
     margin: 0 auto;
+    @include media("<=445px") {
+      flex-direction: column;
+    }
   }
 }
 .card-container {
@@ -61,8 +64,8 @@
 
   @include scrollbars(0, black, black);
   background-color: #373737;
-  position: absolute;
-  top: 80px;
+  position: fixed;
+  top: 55px;
   left: 0;
   right: 0;
   margin-left: auto;
@@ -78,32 +81,105 @@
   .content {
     display: block;
     color: #cccccc;
-    margin: 0 5%;
+    margin: 5% 5%;
+    font-size: 1.5em;
+  }
+}
+
+.expanded {
+  .title-bg {
+    top: 0;
+    height: 20%;
+    margin: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+    justify-content: space-between;
+
+    background-color: inherit;
+    background: linear-gradient(
+      73deg,
+      rgba(73, 108, 70, 1) 0%,
+      rgba(86, 0, 0, 1) 50%,
+      rgba(86, 0, 0, 1) 100%
+    );
+    img {
+      position: relative;
+      right: 1px;
+      width: 40%;
+      object-fit: cover;
+      object-position: 50% 50%;
+      -webkit-mask-image: -webkit-gradient(
+        linear,
+        right top,
+        left top,
+        from(rgba(0, 0, 0, 1) 90%),
+        to(rgba(0, 0, 0, 0))
+      );
+      mask-image: linear-gradient(
+        to left,
+        rgba(0, 0, 0, 1) 90%,
+        rgba(0, 0, 0, 0)
+      );
+      @include media("<=phone") {
+        object-fit: cover;
+        -webkit-mask-image: none;
+
+        mask-image: none;
+        width: 100%;
+      }
+    }
+    .title-div {
+      display: flex;
+      position: relative;
+      height: 100%;
+      width: 75%;
+      @include media("<=phone") {
+        position: absolute;
+
+        left: 0;
+        width: 100%;
+        h1 {
+          margin: auto;
+        }
+      }
+    }
+    h1 {
+      margin: auto;
+      font-size: 3vw;
+      color: white;
+      @include media("<=phone") {
+        font-size: 6vw;
+      }
+    }
   }
 }
 
 .compact {
+  position: relative;
   background-color: #ffffff;
-  width: 10rem;
-  height: 10rem;
-  padding: 0.5rem;
+  width: 20rem;
+  height: 15rem;
+  //   padding: 0.5rem;
+  margin: 20px 0;
   border-radius: 10px;
-}
-.expanded .title-bg {
-  top: 0;
-  width: 100%;
-  background-color: inherit;
-  .title {
-    margin: 0 20px;
-    font-size: 5em;
-    color: white;
+  @include media("<=phone") {
+    width: 70vw;
+    height: 70vw;
   }
-}
-
-.compact .title-bg {
-  width: 100%;
-  top: 0;
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
   .title {
-    font-size: 1.5em;
+    position: absolute;
+    top: 10px;
+    color: black;
+    margin-left: 10px;
+    font-size: 2.5em;
+    @include media("<=445px") {
+      font-size: 12vw;
+    }
   }
 }
