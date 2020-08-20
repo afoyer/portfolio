@@ -1,12 +1,13 @@
 import React from "react";
 import Banner from "../components/banner";
 import ItemList from "./../components/ItemList";
-function Home(props) {
+import { motion } from "framer-motion";
+function Home() {
   return (
-    <div className="home">
+    <motion.div className="home">
       <Banner />
       <ItemList />
-    </div>
+    </motion.div>
   );
 }
 export default Home;

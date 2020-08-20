@@ -6,9 +6,12 @@ function Content({ data, disabled }) {
     <motion.div className="title-div">
       <motion.h1
         className="title"
-        layoutId="title"
+        // layoutId="title"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, transition: { delay: 0.3 } }}
         style={{
           opacity: disabled ? 0.2 : 1,
+          color: data.titlecolor,
         }}
       >
         {data.title}
@@ -27,8 +30,16 @@ function CompactProjectCard({ children, data, onExpand, disabled }) {
       // whileTap={{ scale: 0.95 }}
       onClick={disabled ? undefined : onExpand}
     >
-      <motion.img src={data.imgsource} />
-      {children}
+      <motion.div
+        className="title-bg"
+        layoutId="title-bg"
+        style={{
+          backgroundColor: data.background,
+        }}
+      >
+        <motion.img layoutId="image" src={data.imgsource} />
+        {children}
+      </motion.div>
     </motion.div>
   );
 }
@@ -41,8 +52,15 @@ function ExpandedProjectCard({ children, data, onCollapse }) {
       layoutId="expandable-card"
       onClick={onCollapse}
     >
-      <motion.div className="title-bg">
+      <motion.div
+        className="title-bg"
+        layoutId="title-bg"
+        style={{
+          background: data.background,
+        }}
+      >
         <motion.img
+          layoutId="image"
           onClick={(e) => {
             console.log("clicked");
           }}
@@ -87,21 +105,19 @@ function ProjectItem({ key, data, onCollapse, onExpand, disabled }) {
   return (
     <AnimateSharedLayout type="crossfade">
       <motion.div className="card-container">
-        <AnimatePresence>
-          {isOpen ? (
-            <ExpandedProjectCard onCollapse={collapseDate} data={data}>
-              <Content data={data} disabled={disabled} />
-            </ExpandedProjectCard>
-          ) : (
-            <CompactProjectCard
-              onExpand={expandDate}
-              disabled={disabled}
-              data={data}
-            >
-              <Content data={data} disabled={disabled} />
-            </CompactProjectCard>
-          )}
-        </AnimatePresence>
+        {isOpen ? (
+          <ExpandedProjectCard onCollapse={collapseDate} data={data}>
+            <Content data={data} disabled={disabled} />
+          </ExpandedProjectCard>
+        ) : (
+          <CompactProjectCard
+            onExpand={expandDate}
+            disabled={disabled}
+            data={data}
+          >
+            <Content data={data} disabled={disabled} />
+          </CompactProjectCard>
+        )}
       </motion.div>
     </AnimateSharedLayout>
   );

@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import SlidingName from "./slidingName";
+
 function Banner(props) {
   //Might move this separatly later
   const list = [
