@@ -17,7 +17,10 @@ function Flikr(props) {
       return jsonResponse.photos.photo.map((pic) => {
         var srcPath = `https://farm${pic.farm}.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}.jpg`;
         return (
-          <a href={`https://www.flickr.com/photos/aymericf/${pic.id}`}>
+          <a
+            href={`https://www.flickr.com/photos/aymericf/${pic.id}`}
+            target="_blank"
+          >
             <motion.img
               ref={props.ref}
               key={pic.id}
