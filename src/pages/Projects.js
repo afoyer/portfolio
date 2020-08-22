@@ -6,11 +6,7 @@ import { useInView } from "react-intersection-observer";
 function Projects() {
   const [photos, storePhotos] = useState();
   const [loading, setLoading] = useState(false);
-  // const [background, placeBackground] = useState();
 
-  // const setBackground = (image)=>{
-
-  // }
   const [ref, inView] = useInView({ threshold: 0.6, triggerOnce: true });
   useEffect(() => {
     Flickr(ref, inView).then((array) => {
