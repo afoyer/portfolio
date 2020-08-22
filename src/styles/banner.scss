@@ -2,6 +2,40 @@
 .home {
   // height: 100%;
   overflow: hidden;
+  .aboutMe {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 3%;
+    h1 {
+      margin: 0 15%;
+      font-size: 3vw;
+      // text-align: center;
+      font-weight: bold;
+      @include media("<=phone") {
+        font-size: 6vw;
+      }
+    }
+    h2 {
+      text-align: center;
+      width: 400px;
+
+      margin: 20px auto;
+      font-size: 1.5rem;
+      @include media("<=phone") {
+        width: 100%;
+        font-size: 3vw;
+      }
+    }
+    p {
+      width: 60%;
+      margin: 20px auto;
+      font-size: 1vw;
+      text-align: center;
+      @include media("<=phone") {
+        font-size: 3vw;
+      }
+    }
+  }
   //BANNER
   .banner-container {
     position: relative;

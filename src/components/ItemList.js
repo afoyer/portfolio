@@ -32,22 +32,27 @@ function ItemList(props) {
   ];
   const [ref, inView] = useInView({
     /* Optional options */
-    threshold: 0,
+    threshold: 0.6,
     triggerOnce: true,
   });
   return (
-    <>
+    <div ref={ref}>
       <motion.div
         className="project-title-div"
-        ref={ref}
         initial={false}
         animate={
           inView
-            ? { opacity: 1, x: 0, transition: { duration: 0.5 } }
+            ? {
+                color: "#212121",
+                opacity: 1,
+                x: 0,
+                transition: { duration: 0.5 },
+              }
             : { opacity: 0, x: -100, transition: { duration: 1 } }
         }
+        exit={{ opacity: 0 }}
         whileHover={{
-          y: [5, -5],
+          color: ["#7953d2", "#1565c0"],
           transition: { yoyo: Infinity, ease: "easeInOut", duration: 0.7 },
         }}
       >
@@ -55,7 +60,7 @@ function ItemList(props) {
       </motion.div>
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        animate={inView ? { opacity: 1 } : { opacity: 0 }}
         exit={{ opacity: 0 }}
         id="projects"
         className="project-container"
@@ -73,7 +78,7 @@ function ItemList(props) {
           ))}
         </div>
       </motion.div>
-    </>
+    </div>
   );
 }
 export default ItemList;
