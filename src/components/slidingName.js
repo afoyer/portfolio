@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 //props are a list of different names
 /**
@@ -20,6 +20,17 @@ function SlidingName(props) {
 
       transition: { delay: 0.1, duration: props.duration },
     },
+    final: {
+      y: 0,
+      opacity: 1,
+
+      transition: {
+        delay: 0.5,
+        duration: props.duration + 0.5,
+        ease: "easeOut",
+      },
+    },
+
     exit: {
       y: -10,
       opacity: 0,
@@ -32,11 +43,12 @@ function SlidingName(props) {
     return (
       number === index && (
         <motion.span
-          key={index}
+          key={`${item.name}slide`}
           onAnimationComplete={cycleNext}
           variants={variants}
           initial="hidden"
-          animate="show"
+          //have special animation for last element
+          animate={index + 1 !== props.list.length ? "show" : "final"}
           exit="exit"
           style={{ color: item.color }}
         >
@@ -55,7 +67,7 @@ function SlidingName(props) {
   }
   return (
     //works for any number of items
-    <AnimatePresence exitBeforeEnter>{names}</AnimatePresence>
+    <>{names}</>
   );
 }
 export default SlidingName;

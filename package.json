@@ -15,6 +15,7 @@
     "react-dom": "^16.13.1",
     "react-hook-intersection-observer": "^0.1.0",
     "react-id-swiper": "^4.0.0",
+    "react-intersection-observer": "^8.27.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1"
   },

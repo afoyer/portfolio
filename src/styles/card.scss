@@ -24,12 +24,24 @@
     scrollbar-track-color: $background-color;
   }
 }
+.project-title-div {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 3%;
+  h1 {
+    margin: 0 15%;
+    font-size: 3vw;
+    // text-align: center;
+    font-weight: bold;
+    @include media("<=phone") {
+      font-size: 6vw;
+    }
+  }
+}
 .project-container {
   width: 100%;
   //   height: 100%; //   display: flex;
-  @include media("<=tablet") {
-    margin: auto auto;
-  }
+
   @include media("<=phone") {
     margin: auto;
   }
@@ -37,15 +49,14 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+
+    // flex-direction: column;
+
     justify-content: center;
     width: 100%;
-    height: 100%;
+    // height: 100vh;
     margin: 0 auto;
-
-    flex-direction: column;
-    @include media("<=445px") {
-      flex-direction: column;
-    }
+    margin-top: 20px;
   }
 }
 .card-container {
@@ -92,24 +103,15 @@
   border-radius: 10px;
   .title-bg {
     box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.2);
-    top: 0;
     height: 20%;
     margin: auto;
+    position: relative;
+    top: 0;
     display: flex;
     flex-direction: row-reverse;
-    position: relative;
     justify-content: space-between;
-
-    // background-color: inherit;
-    // background: linear-gradient(
-    //   73deg,
-    //   rgba(73, 108, 70, 1) 0%,
-    //   rgba(86, 0, 0, 1) 50%,
-    //   rgba(86, 0, 0, 1) 100%
-    // );
     img {
       position: relative;
-      //   right: 1px;
       width: 40%;
       object-fit: cover;
       object-position: 50% 50%;
@@ -126,9 +128,7 @@
         rgba(0, 0, 0, 0)
       );
       @include media("<=phone") {
-        object-fit: cover;
         -webkit-mask-image: none;
-
         mask-image: none;
         width: 100%;
       }
@@ -139,10 +139,9 @@
       height: 100%;
       width: 75%;
       @include media("<=phone") {
-        position: absolute;
-
-        left: 0;
         width: 100%;
+        position: absolute;
+        left: 0;
         h1 {
           margin: auto;
         }
@@ -163,11 +162,9 @@
 .compact {
   position: relative;
   background-color: #373737;
-  width: 90vh;
-  height: 15rem;
-  //   padding: 0.5rem;
-  margin: 20px 0;
-  border-radius: 10px;
+  width: 20vw;
+  height: 20vw;
+  margin: 5px 0;
   @include media("<=phone") {
     width: 70vw;
     height: 70vw;
@@ -205,8 +202,5 @@
     text-align: center;
 
     font-size: 250%;
-    @include media("<=445px") {
-      //   font-size: 12vw;
-    }
   }
 }

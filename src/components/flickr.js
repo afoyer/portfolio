@@ -1,8 +1,8 @@
 import React from "react";
 
 function Flikr() {
-  const api_key = "512229ca9997758450725cfd4095cf76-0oidfgdudfgdfg";
-  const user_id = "189755012@N03";
+  const api_key = process.env.REACT_APP_API_KEY;
+  const user_id = process.env.REACT_APP_USER_ID;
   return fetch(
     `https://www.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=${api_key}&user_id=${user_id}`
   )

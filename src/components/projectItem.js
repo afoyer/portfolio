@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
+import { motion, AnimateSharedLayout } from "framer-motion";
 function Content({ data, disabled }) {
   return (
     <motion.div className="title-div">
@@ -22,12 +22,24 @@ function Content({ data, disabled }) {
     </motion.div>
   );
 }
-function CompactProjectCard({ children, data, onExpand, disabled }) {
+function CompactProjectCard({
+  children,
+  data,
+  onExpand,
+  disabled,
+  startColor,
+  endColor,
+}) {
+  const setColor = () => {
+    startColor(data.backgroundHover);
+  };
   return (
     <motion.div
       className="card compact"
       layoutId="expandable-card"
       onClick={disabled ? undefined : onExpand}
+      onHoverStart={setColor}
+      onHoverEnd={endColor}
     >
       <motion.div
         className="title-bg"
@@ -47,9 +59,9 @@ function ExpandedProjectCard({ children, data, onCollapse }) {
   return (
     <motion.div
       // animate={{ scale: 1 }}
+      onClick={onCollapse}
       className="card expanded"
       layoutId="expandable-card"
-      onClick={onCollapse}
     >
       <motion.div
         className="title-bg"
@@ -60,9 +72,6 @@ function ExpandedProjectCard({ children, data, onCollapse }) {
       >
         <motion.img
           layoutId="image"
-          onClick={(e) => {
-            console.log("clicked");
-          }}
           src={data.imgsource}
           initial={{ x: 20, opacity: 0 }}
           animate={{
@@ -78,7 +87,7 @@ function ExpandedProjectCard({ children, data, onCollapse }) {
           <motion.p
             key={index}
             className="content"
-            onClick={onCollapse}
+            // onClick={onCollapse}
             transition={{ delay: 0.2 }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -90,21 +99,33 @@ function ExpandedProjectCard({ children, data, onCollapse }) {
     </motion.div>
   );
 }
-function ProjectItem({ key, data, onCollapse, onExpand, disabled, setColor }) {
+function ProjectItem({ data, onCollapse, onExpand, disabled, setColor }) {
   const [isOpen, setOpen] = useState(false);
   const collapseDate = () => {
     setOpen(false);
     onCollapse();
-    setColor();
-  };
 
+    setColor("#ffffff");
+  };
+  const startColor = (color) => {
+    if (!disabled) {
+      setColor(color);
+    }
+  };
+  const endColor = () => {
+    if (!disabled) {
+      setColor("#ffffff");
+    }
+  };
   const expandDate = () => {
     setOpen(true);
     onExpand();
-    setColor();
+    // setColor();
+
+    setColor(data.background);
   };
   return (
-    <AnimateSharedLayout type="crossfade">
+    <AnimateSharedLayout>
       <motion.div className="card-container">
         {isOpen ? (
           <ExpandedProjectCard onCollapse={collapseDate} data={data}>
@@ -114,6 +135,8 @@ function ProjectItem({ key, data, onCollapse, onExpand, disabled, setColor }) {
           <CompactProjectCard
             onExpand={expandDate}
             disabled={disabled}
+            startColor={startColor}
+            endColor={endColor}
             data={data}
           >
             <Content data={data} disabled={disabled} />

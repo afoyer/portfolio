@@ -5,8 +5,10 @@ import SlidingName from "./slidingName";
 function Banner(props) {
   //Might move this separatly later
   const list = [
-    { name: "Je suis Aymeric", color: "red" },
-    { name: "私はエメリックです。", color: "#607d8b" },
+    { name: "Je suis Aymeric.", color: "red" },
+    { name: "エメリックです。", color: "#607d8b" },
+    { name: "나는 Aymeric입니다.", color: "red" },
+    { name: "Yo soy Aymeric.", color: "#607d8b" },
     { name: "I am Aymeric.", color: "black" },
   ];
   const list2 = [
@@ -21,9 +23,8 @@ function Banner(props) {
       opacity: 1,
       y: 0,
       transition: {
-        delay: 1,
-        delayChildren: 0.5,
-        staggerChildren: list.length * 1.5,
+        delay: 0.1,
+        staggerChildren: list.length * 0.65,
       },
     },
 
@@ -47,7 +48,7 @@ function Banner(props) {
     },
   };
   return (
-    <div className="banner-container">
+    <motion.div className="banner-container">
       <motion.div
         variants={container}
         initial="hidden"
@@ -60,12 +61,14 @@ function Banner(props) {
           <SlidingName list={list} duration={0.5} />
         </motion.h1>
         <motion.h2 variants={item}>
-          I create <SlidingName list={list2} duration={0.5} />
+          I create <br className="mobile-break" />{" "}
+          <SlidingName list={list2} duration={0.5} />
         </motion.h2>
       </motion.div>
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { delay: 6 } }}
+        animate={{ opacity: 1, transition: { delay: 3 } }}
+        exit={{ opacity: 0 }}
         className="arrow-down"
       >
         <motion.a>
@@ -85,7 +88,17 @@ function Banner(props) {
           </motion.svg>{" "}
         </motion.a>
       </motion.div>
-    </div>
+      <motion.img
+        initial={{ opacity: 0, y: 80 }}
+        animate={{
+          y: 0,
+          opacity: 0.5,
+          transition: { delay: 3, duration: 2 },
+        }}
+        exit={{ opacity: 0 }}
+        src="https://raw.githubusercontent.com/afoyer/portfolio/master/src/assets/background%20(1).png"
+      />
+    </motion.div>
   );
 }
 export default Banner;
