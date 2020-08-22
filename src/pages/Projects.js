@@ -19,8 +19,12 @@ function Projects() {
     });
   }, []);
   return (
-    <>
-      <div className="loader">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="photos"
+    >
+      <motion.div className="loader">
         {!loading && (
           <motion.img
             key="load"
@@ -31,9 +35,9 @@ function Projects() {
             src="https://raw.githubusercontent.com/afoyer/portfolio/master/public/logo512.png"
           />
         )}
-      </div>
+      </motion.div>
       <motion.div className="imageContainer">{loading && photos}</motion.div>
-    </>
+    </motion.div>
   );
 }
 export default Projects;
