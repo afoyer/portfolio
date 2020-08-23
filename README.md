@@ -17,6 +17,7 @@ Link to [website](https://afoyer.github.io/portfolio) (currently in development)
 -   Responsive design
 -   Layout Projects with *fluid* motions
 -   Probably more but I'm lazy to keep on going.
+-   Added a photos page that calls my flickr account to display pictures I have taken. :camera:
 
 
 
