@@ -1,9 +1,8 @@
 //scrollBar stuff
-@mixin scrollbars(
-  $size,
+@mixin scrollbars($size,
   $foreground-color,
-  $background-color: mix($foreground-color, white, 50%)
-) {
+  $background-color: mix($foreground-color, white, 50%)) {
+
   // For Google Chrome
   &::-webkit-scrollbar {
     width: $size;
@@ -24,18 +23,22 @@
     scrollbar-track-color: $background-color;
   }
 }
+
 .project-title-div {
   width: 100%;
   margin: 0 auto;
   margin-top: 3%;
+
   @include media("<=phone") {
     margin-top: 10%;
   }
+
   h1 {
     margin: 0 15%;
     font-size: 3rem;
     // text-align: center;
     font-weight: bold;
+
     @include media("<=phone") {
       margin-top: 5%;
       font-size: 10vw;
@@ -43,6 +46,7 @@
     }
   }
 }
+
 .project-container {
   width: 100%;
   //   height: 100%; //   display: flex;
@@ -50,20 +54,17 @@
   @include media("<=phone") {
     margin: auto;
   }
+
   .dates {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-
-    // flex-direction: column;
-
     justify-content: center;
     width: 100%;
-    // height: 100vh;
     margin: 0 auto;
     margin-top: 20px;
   }
 }
+
 .card-container {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -90,12 +91,14 @@
   margin-right: auto;
   width: 80%;
   height: 75vh;
+
   @include media("<=phone") {
     z-index: 5;
     width: 90%;
     height: 90vh;
     margin: 0 auto;
   }
+
   .content {
     display: block;
     color: #cccccc;
@@ -106,6 +109,7 @@
 
 .expanded {
   border-radius: 10px;
+
   .title-bg {
     box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.2);
     height: 20%;
@@ -115,48 +119,51 @@
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
+
     img {
       position: relative;
       width: 40%;
       object-fit: cover;
       object-position: 50% 50%;
-      -webkit-mask-image: -webkit-gradient(
-        linear,
-        right top,
-        left top,
-        from(rgba(0, 0, 0, 1) 90%),
-        to(rgba(0, 0, 0, 0))
-      );
-      mask-image: linear-gradient(
-        to left,
-        rgba(0, 0, 0, 1) 90%,
-        rgba(0, 0, 0, 0)
-      );
+      -webkit-mask-image: -webkit-gradient(linear,
+          right top,
+          left top,
+          from(rgba(0, 0, 0, 1) 90%),
+          to(rgba(0, 0, 0, 0)));
+      mask-image: linear-gradient(to left,
+          rgba(0, 0, 0, 1) 90%,
+          rgba(0, 0, 0, 0));
+
       @include media("<=phone") {
         -webkit-mask-image: none;
         mask-image: none;
         width: 100%;
       }
     }
+
     .title-div {
       display: flex;
       position: relative;
       height: 100%;
       width: 75%;
+
       @include media("<=phone") {
         width: 100%;
         position: absolute;
         left: 0;
+
         h1 {
           margin: auto;
         }
       }
     }
+
     h1 {
       text-shadow: 0px 2px 3px #212121;
       margin: auto;
       font-size: 3vw;
       color: white;
+
       @include media("<=phone") {
         font-size: 6vw;
       }
@@ -170,30 +177,30 @@
   width: 20vw;
   height: 20vw;
   margin: 5px 0;
+
   @include media("<=phone") {
     width: 70vw;
     height: 70vw;
   }
+
   .title-bg {
     height: 100%;
   }
+
   img {
-    -webkit-mask-image: -webkit-gradient(
-      linear,
-      right top,
-      left top,
-      from(rgba(0, 0, 0, 1) 90%),
-      to(rgba(0, 0, 0, 0))
-    );
-    mask-image: linear-gradient(
-      to left,
-      rgba(0, 0, 0, 1) 90%,
-      rgba(0, 0, 0, 0)
-    );
+    -webkit-mask-image: -webkit-gradient(linear,
+        right top,
+        left top,
+        from(rgba(0, 0, 0, 1) 90%),
+        to(rgba(0, 0, 0, 0)));
+    mask-image: linear-gradient(to left,
+        rgba(0, 0, 0, 1) 90%,
+        rgba(0, 0, 0, 0));
     object-fit: cover;
     width: 100%;
     height: 100%;
   }
+
   .title {
     position: absolute;
     text-shadow: 0px 2px 3px #212121;
@@ -207,6 +214,7 @@
     text-align: center;
 
     font-size: 2vw;
+
     @include media("<=phone") {
       font-size: 6vw;
     }

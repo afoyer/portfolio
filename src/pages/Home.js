@@ -4,7 +4,7 @@ import ItemList from "./../components/ItemList";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 function Home() {
-  const [color, setColor] = useState("#ffffff");
+  const [color, setColor] = useState("#fffff");
   function toggleColor(color) {
     setColor(color);
   }
@@ -14,6 +14,7 @@ function Home() {
       className="home"
       initial={false}
       animate={{ background: color, transition: { type: "tween" } }}
+      exit={{ opacity: 0 }}
     >
       <Banner />
       <motion.div

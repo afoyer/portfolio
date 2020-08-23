@@ -1,0 +1,141 @@
+.home {
+  overflow: hidden;
+}
+.home .aboutMe {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 3%;
+}
+.home .aboutMe h1 {
+  margin: 0 15%;
+  font-size: 3vw;
+  font-weight: bold;
+}
+.home .aboutMe h2 {
+  text-align: center;
+  width: 500px;
+  margin: 20px auto;
+  font-size: 1.5rem;
+}
+@media (max-width: 650px) {
+  .home .aboutMe h2 {
+    width: 90%;
+    font-size: 6vw;
+  }
+}
+.home .aboutMe p {
+  width: 60%;
+  margin: 20px auto;
+  font-size: 1vw;
+  text-align: center;
+}
+@media (max-width: 650px) {
+  .home .aboutMe p {
+    font-size: 3vw;
+  }
+}
+.home .banner-container {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: auto 0;
+}
+.home .banner-container .banner {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 35%;
+}
+@media (max-width: 768px) {
+  .home .banner-container .banner {
+    margin: auto auto;
+  }
+}
+@media (max-width: 650px) {
+  .home .banner-container .banner {
+    margin: auto;
+  }
+}
+.home .banner-container .banner h1 {
+  line-height: 100%;
+  margin: 0 15%;
+  font-size: 3vw;
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  .home .banner-container .banner h1 {
+    text-align: center;
+    margin: 25px;
+  }
+}
+@media (max-width: 650px) {
+  .home .banner-container .banner h1 {
+    text-align: center;
+    font-size: 2.5rem;
+  }
+}
+.home .banner-container .banner h1 span {
+  font-feature-settings: "pnum";
+  display: inline-flex;
+  font-size: 3vw;
+  font-weight: 700;
+  margin-top: auto;
+}
+@media (max-width: 650px) {
+  .home .banner-container .banner h1 span {
+    font-size: 2.5rem;
+  }
+}
+.home .banner-container .banner h2 {
+  margin: 0 15%;
+  font-size: 3vw;
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  .home .banner-container .banner h2 {
+    font-size: 2.7rem;
+    text-align: center;
+  }
+}
+@media (max-width: 650px) {
+  .home .banner-container .banner h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+.home .banner-container .banner .mobile-break {
+  display: none;
+}
+@media (max-width: 768px) {
+  .home .banner-container .banner .mobile-break {
+    display: inline;
+  }
+}
+.home .banner-container .arrow-down {
+  width: 100%;
+  position: absolute;
+  bottom: 20%;
+}
+.home .banner-container .arrow-down a:visited,
+.home .banner-container .arrow-down a:hover,
+.home .banner-container .arrow-down a:focus {
+  text-decoration: none;
+  color: #212121;
+}
+.home .banner-container .arrow-down svg {
+  margin-left: auto;
+  margin-right: auto;
+  fill: "#212121";
+  display: block;
+  width: 50px;
+}
+.home .banner-container img {
+  -webkit-mask-image: -webkit-gradient(linear, right top, right bottom, from(black 90%), to(rgba(0, 0, 0, 0)));
+  mask-image: linear-gradient(to bottom, black 90%, rgba(0, 0, 0, 0));
+  display: block;
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  width: 100%;
+}

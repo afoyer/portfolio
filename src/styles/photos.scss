@@ -4,6 +4,27 @@
   //   height: 100%;
   background-color: #212121;
 }
+.photoBanner {
+  width: 100%;
+  padding: 10% auto;
+  h1 {
+    margin: 0;
+    display: block;
+    padding-top: 15%;
+    padding-bottom: 5%;
+    color: white;
+    text-align: center;
+    @include media("<=phone") {
+      padding-top: 30%;
+      padding-bottom: 5%;
+    }
+    span {
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
 .imageContainer {
   display: flex;
 
@@ -14,7 +35,7 @@
   align-items: baseline;
 
   //   margin: 0 10%;
-  padding-top: 10%;
+  //   padding-top: 10%;
   .flickrImage {
     max-height: 300px;
     width: auto;

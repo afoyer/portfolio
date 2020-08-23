@@ -44,7 +44,6 @@ function Banner(props) {
     exit: {
       y: -10,
       opacity: 0,
-      transition: { delay: 0.5, duration: 0.5 },
     },
   };
   return (
@@ -93,7 +92,7 @@ function Banner(props) {
         animate={{
           y: 0,
           opacity: 0.5,
-          transition: { delay: 3, duration: 2 },
+          transition: { delay: 2.5, duration: 2 },
         }}
         exit={{ opacity: 0 }}
         src="https://raw.githubusercontent.com/afoyer/portfolio/master/src/assets/background%20(1).png"
