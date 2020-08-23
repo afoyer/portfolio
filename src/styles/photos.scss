@@ -11,7 +11,7 @@
   flex-wrap: wrap;
   margin: 0 auto;
   justify-content: center;
-  align-items: center;
+  align-items: baseline;
 
   //   margin: 0 10%;
   padding-top: 10%;
@@ -21,6 +21,7 @@
     margin: auto 0;
     // flex-basis: auto;
     @include media("<=phone") {
+      margin: 5px 0;
       max-height: unset;
       max-width: 100%;
     }

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-function Flikr(props) {
+function Flikr() {
   const api_key = process.env.REACT_APP_API_KEY;
   const user_id = process.env.REACT_APP_USER_ID;
 
@@ -18,11 +18,12 @@ function Flikr(props) {
         var srcPath = `https://farm${pic.farm}.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}.jpg`;
         return (
           <a
+            rel="noreferrer noopener"
+            key={`imageAnchor${pic.id}`}
             href={`https://www.flickr.com/photos/aymericf/${pic.id}`}
             target="_blank"
           >
             <motion.img
-              ref={props.ref}
               key={pic.id}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

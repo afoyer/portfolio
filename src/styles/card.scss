@@ -28,13 +28,17 @@
   width: 100%;
   margin: 0 auto;
   margin-top: 3%;
+  @include media("<=phone") {
+    margin-top: 10%;
+  }
   h1 {
     margin: 0 15%;
     font-size: 3rem;
     // text-align: center;
     font-weight: bold;
     @include media("<=phone") {
-      font-size: 6vw;
+      margin-top: 5%;
+      font-size: 10vw;
       text-align: center;
     }
   }

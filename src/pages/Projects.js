@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Flickr from "../components/flickr";
-import { useInView } from "react-intersection-observer";
 
 function Projects() {
   const [photos, storePhotos] = useState();
   const [loading, setLoading] = useState(false);
 
-  const [ref, inView] = useInView({ threshold: 0.6, triggerOnce: true });
   useEffect(() => {
-    Flickr(ref, inView).then((array) => {
+    Flickr().then((array) => {
       storePhotos(array);
       setLoading(true);
     });
@@ -26,7 +24,15 @@ function Projects() {
             key="load"
             className="load"
             initial={false}
-            animate={{ opacity: 1 }}
+            animate={{
+              rotate: [0, -5, 360],
+              transition: {
+                ease: "easeInOut",
+                type: "spring",
+                loop: Infinity,
+                duration: 1,
+              },
+            }}
             exit={{ opacity: 0 }}
             src="https://raw.githubusercontent.com/afoyer/portfolio/master/public/logo512.png"
           />
