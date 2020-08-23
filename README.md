@@ -16,7 +16,7 @@ Link to [website](https://afoyer.github.io/portfolio) (currently in development)
 -   Simple NavBar that is reactive when on desktop
 -   Responsive design
 -   Layout Projects with *fluid* motions
--   Probably more but I'm lazy to keep on going.
+-   Project Cards that expand with a cool animation! 
 -   Added a photos page that calls my flickr account to display pictures I have taken. :camera:
 
 
