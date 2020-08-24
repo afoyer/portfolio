@@ -22,8 +22,8 @@ function Projects() {
       className="photos"
     >
       {/* LOADING STATE */}
-      <motion.div className="loader">
-        {!loading && (
+      {!loading && (
+        <motion.div className="loader">
           <motion.img
             key="load"
             className="load"
@@ -40,8 +40,8 @@ function Projects() {
             exit={{ opacity: 0 }}
             src="https://raw.githubusercontent.com/afoyer/portfolio/master/public/logo512.png"
           />
-        )}
-      </motion.div>
+        </motion.div>
+      )}
       {/* IMAGES */}
       {loading && (
         <motion.div className="photoBanner">

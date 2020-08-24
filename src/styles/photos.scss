@@ -1,7 +1,7 @@
 .photos {
   position: relative;
   width: 100%;
-  padding-top: 5%;
+  // padding-top: 5%;
   //   height: 100%;
   background-color: #212121;
   @include media("<=phone") {
@@ -64,17 +64,14 @@
   }
 }
 .loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  //   height: 100vh;
+  height: 100vh;
 }
 .load {
-  display: block;
-  margin: auto;
   width: 200px;
 
-  padding-top: 20%;
-  padding-bottom: 20%;
-
-  margin: 0 auto;
   // margin-top: 35%;
 }
