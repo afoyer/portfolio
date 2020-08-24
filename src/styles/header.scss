@@ -1,15 +1,18 @@
 .header {
   position: fixed;
-  width: 100%;
+  // width: 100%;
   height: 70px;
   top: 20px;
   z-index: 4;
-  margin-left: auto;
+  margin-left: 5%;
   margin-right: auto;
   // color: inherit;
   @include media("<=phone") {
-    height: 70px;
-    position: absolute;
+    width: 100%;
+    height: unset;
+    margin: 0;
+    // padding-top: 20px;
+    top: 0;
   }
 
   .logo {
@@ -28,6 +31,10 @@
       margin-top: 20px;
       width: 50px;
       // scale: 0.5;
+      @include media("<=phone") {
+        padding-top: 20px;
+        margin: 0 auto;
+      }
     }
     .desktop {
       vertical-align: middle;
@@ -52,13 +59,17 @@
     }
   }
   .addOnMenu {
-    display: flex;
-    flex-direction: row;
     margin: auto 20px;
     position: relative;
-
     text-align: center;
-
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    // padding: 10px 0;
+    @include media("<=phone") {
+      justify-content: space-around;
+      padding-bottom: 20px;
+    }
     h3 {
       margin: 0 10px;
       display: inline;
@@ -70,9 +81,6 @@
         font-weight: 700;
         font-size: 1.1rem;
       }
-    }
-    @include media("<=phone") {
-      display: none;
     }
 
     h3 {
@@ -86,9 +94,6 @@
     .menuItem {
       font-weight: 700;
       font-size: 1.1rem;
-    }
-    @include media("<=phone") {
-      display: none;
     }
   }
 }

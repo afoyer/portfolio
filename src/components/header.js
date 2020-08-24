@@ -55,11 +55,9 @@ function Nav(props) {
       className="addOnMenu"
       exit={{ transition: { staggerChildren: 0.1 } }}
     >
-      <MenuItem name="PHOTOS" link="/photos" backgroundSelectColor="#ffffff" />
-
-      <MenuItem name="ABOUT" link="/about" backgroundSelectColor="#ffffff" />
+      <MenuItem name="PHOTO📸" link="/photos" backgroundSelectColor="#ffffff" />
       <MenuItem
-        name="RESUME"
+        name="RESUME📄"
         link="/resume"
         backgroundSelectColor="#ffffff"
       ></MenuItem>

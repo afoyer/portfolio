@@ -75,6 +75,35 @@ function Projects() {
               >
                 Flickr
               </motion.a>
+            </span>{" "}
+            or{" "}
+            <span>
+              <motion.a
+                className="flickr-anchor"
+                initial={false}
+                animate={{
+                  background:
+                    "linear-gradient(98deg, rgba(82,160,218,1) 0%, rgba(82,160,218,1) 50%, rgba(82,160,218,1) 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+                href="https://www.instagram.com/aymericjlf/"
+                rel="noreferrer noopener"
+                target="_blank"
+                whileHover={{
+                  background: [
+                    "linear-gradient(98deg, rgba(252,176,69,1) 0%, rgba(131,58,180,1) 50%, rgba(253,29,29,1) 100%)",
+                    "linear-gradient(98deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)",
+
+                    "linear-gradient(98deg, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 50%, rgba(131,58,180,1) 100%)",
+
+                    "linear-gradient(98deg, rgba(252,176,69,1) 0%, rgba(131,58,180,1) 50%, rgba(253,29,29,1) 100%)",
+                  ],
+                  transition: { loop: Infinity, duration: 2, type: "spring" },
+                }}
+              >
+                Instagram
+              </motion.a>
             </span>
             .
           </motion.h1>

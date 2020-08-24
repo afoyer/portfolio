@@ -28,8 +28,9 @@ html,
 .container {
   z-index: 4;
   background-color: transparent;
-  display: inline-block;
-  margin: 0 5%;
+  // display: inline-block;
+  display: block;
+  // margin: 0 5%;
   height: 100%;
   border-radius: 5px;
   @include media("<=phone") {
@@ -44,6 +45,7 @@ html,
     padding: 0 auto;
 
     @include media("<=phone") {
+      display: block;
     }
   }
 
