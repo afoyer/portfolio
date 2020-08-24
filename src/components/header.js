@@ -36,18 +36,15 @@ function Nav(props) {
   const containerVariants = {
     open: {
       opacity: 1,
-      width: "385px",
-      backgroundColor: "rgba(33, 33, 33, 1)",
-      borderRadius: "5px",
+      backgroundColor: "rgba(33, 33, 33, 0.5)",
 
       boxShadow: "0px 5px 15px -5px #212121",
     },
     collapsed: {
       opacity: 1,
-      width: "75px",
-      backgroundColor: "rgba(33, 33, 33, 0)",
-      borderRadius: "5px",
+      backgroundColor: "rgba(255, 255, 255, 0.5)",
 
+      backdropFilter: "blur(6px)",
       boxShadow: "0px 0px 0px -5px rgba(0, 0, 0, 0)",
       transition: { delay: 0.1, duration: 0.3 },
     },
