@@ -14,7 +14,6 @@
   width: 100%;
   top: 0;
   position: relative;
-  // margin-top: 5%;
   padding-top: 5%;
   background-image: linear-gradient(
     to top,
@@ -25,7 +24,6 @@
   h1 {
     position: sticky;
     display: block;
-    // padding-top: 15%;
     padding-bottom: 5%;
     color: white;
     text-align: center;
@@ -48,14 +46,10 @@
   margin: 0 auto;
   justify-content: center;
   align-items: baseline;
-
-  //   margin: 0 10%;
-  //   padding-top: 10%;
   .flickrImage {
     max-height: 300px;
     width: auto;
     margin: auto 0;
-    // flex-basis: auto;
     @include media("<=phone") {
       margin: 5px 0;
       max-height: unset;

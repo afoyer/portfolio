@@ -55,11 +55,15 @@ function Nav(props) {
       className="addOnMenu"
       exit={{ transition: { staggerChildren: 0.1 } }}
     >
-      <MenuItem name="PHOTO📸" link="/photos" backgroundSelectColor="#ffffff" />
       <MenuItem
-        name="RESUME📄"
+        name="PHOTO"
+        link="/photos"
+        backgroundSelectColor="rgba(255,255,255,1)"
+      />
+      <MenuItem
+        name="RESUME"
         link="/resume"
-        backgroundSelectColor="#ffffff"
+        backgroundSelectColor="rgba(255,255,255,1)"
       ></MenuItem>
     </motion.div>
   );
@@ -115,9 +119,6 @@ function Nav(props) {
                 />
                 <polygon points="187.61 69.13 164.82 98.77 194.34 98.77 216.6 69.13 187.61 69.13" />
               </motion.svg>
-              <motion.p variants={textVariants} className="desktop">
-                {/* AYMERIC<span className="small"> FOYER</span> */}
-              </motion.p>
             </Link>
           </motion.div>
           {addOn}

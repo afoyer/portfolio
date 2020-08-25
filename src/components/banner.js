@@ -1,21 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import SlidingName from "./slidingName";
+import { slidedatamain, slidedatasub } from "./../data/slidedata";
 
 function Banner(props) {
   //Might move this separatly later
-  const list = [
-    { name: "Je suis Aymeric.", color: "red" },
-    { name: "エメリックです。", color: "#607d8b" },
-    { name: "나는 Aymeric입니다.", color: "red" },
-    { name: "Yo soy Aymeric.", color: "#607d8b" },
-    { name: "I am Aymeric.", color: "black" },
-  ];
-  const list2 = [
-    { name: "art.", color: "red" },
-    { name: "websites.", color: "#607d8b" },
-    { name: "cool things.", color: "black" },
-  ];
 
   const container = {
     hidden: { opacity: 0, y: -10 },
@@ -24,7 +13,7 @@ function Banner(props) {
       y: 0,
       transition: {
         delay: 0.1,
-        staggerChildren: list.length * 0.65,
+        staggerChildren: slidedatamain.length * 0.65,
       },
     },
 
@@ -57,11 +46,11 @@ function Banner(props) {
       >
         <motion.h1 variants={item} exit="exit">
           Hey. <br className="mobile-break" />{" "}
-          <SlidingName list={list} duration={0.5} />
+          <SlidingName list={slidedatamain} duration={0.5} />
         </motion.h1>
         <motion.h2 variants={item}>
           I create <br className="mobile-break" />{" "}
-          <SlidingName list={list2} duration={0.5} />
+          <SlidingName list={slidedatasub} duration={0.5} />
         </motion.h2>
       </motion.div>
       <motion.div

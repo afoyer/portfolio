@@ -1,0 +1,78 @@
+$textcolor: white;
+.expanded-content {
+  padding-bottom: 15%;
+  .content-header {
+    text-align: center;
+    color: $textcolor;
+    margin: 10 10px;
+  }
+}
+.content-text {
+  margin: 0 10%;
+  font-size: 1rem;
+  color: $textcolor;
+  a {
+    color: #2196f3;
+    font-size: inherit;
+    font-weight: inherit;
+    text-decoration: none;
+  }
+  @include media("<=phone") {
+    font-size: 1rem;
+  }
+}
+.bold-opening {
+  color: #4fc3f7;
+  font-weight: bold;
+}
+.content-img {
+  display: block;
+  max-height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 10px auto;
+  @include media("<=phone") {
+    width: 100%;
+  }
+}
+.img-description {
+  font-size: 1rem;
+  font-weight: 400;
+  color: $textcolor;
+  text-align: center;
+  font-style: italic;
+  @include media("<=phone") {
+    font-size: 0.75rem;
+  }
+}
+.content-subheader {
+  @include media("<=phone") {
+    line-height: unset;
+    font-size: 1rem;
+  }
+  text-align: center;
+  color: $textcolor;
+  text-decoration: underline;
+  margin: 10 10px;
+}
+.content-tab {
+  color: $textcolor;
+  margin: 50px 10%;
+  font-size: 2rem;
+}
+.content-video {
+  position: relative;
+  overflow: hidden;
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 56.25%;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
