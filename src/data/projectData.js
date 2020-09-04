@@ -1,4 +1,5 @@
 import React from "react";
+import ImageContainer from "./../components/ImageContainer";
 const tab = <>&nbsp;&nbsp;&nbsp;&nbsp;</>;
 export const items = [
   /**
@@ -49,11 +50,14 @@ export const items = [
           </a>
           . So we had to try this out and figure out how to build it.
         </p>
-        <img
-          className="content-img auto-h"
-          src="https://raw.githubusercontent.com/afoyer/portfolio/master/public/images/drawboard.jpg"
-          alt="whiteboard draft"
+        <ImageContainer
+          name="drawboard"
+          second="jpg"
+          alt="Drawboard Concept"
+          cssclass="content-img auto-h"
+          path="/images/Radiosity/"
         />
+
         <h3 className="img-description">
           A very rough/early mockup of what we were doing.
         </h3>
@@ -77,10 +81,12 @@ export const items = [
           We decided to create planes with them having grids of dots within them
           that are evenly spaced to cover the whole plane.
         </p>
-        <img
-          className="content-img auto-h"
-          src="https://raw.githubusercontent.com/afoyer/portfolio/master/public/images/dotpnanesketch.jpg"
-          alt="dot-sketch"
+        <ImageContainer
+          name="dotpnanesketch"
+          second="jpg"
+          alt="Dot Sketch"
+          cssclass="content-img auto-h"
+          path="/images/Radiosity/"
         />
         <h3 className="img-description">
           Basic way the dots are placed and what a dot means.
@@ -107,10 +113,12 @@ export const items = [
           href="https://raw.githubusercontent.com/afoyer/portfolio/master/public/images/codeSnippet-min.png"
           target="_blank"
         >
-          <img
-            className="content-img auto-h"
-            src="https://raw.githubusercontent.com/afoyer/portfolio/master/public/images/codeSnippet-min.png"
-            alt="code-view"
+          <ImageContainer
+            name="codeSnippet-min"
+            second="png"
+            alt="Code Snippet"
+            cssclass="content-img auto-h"
+            path="/images/Radiosity/"
           />
         </a>
         <h3 className="img-description">A lot of checking.</h3>
@@ -186,23 +194,13 @@ export const items = [
         <h1 className="content-header">
           Our First Step Into React-Native (and JavaScript).
         </h1>
-        <picture>
-          <source
-            className="content-img auto-h"
-            srcSet={process.env.PUBLIC_URL + "/images/CCEvents/groupphoto.webp"}
-            type="image/webp"
-          />
-          <source
-            srcSet={process.env.PUBLIC_URL + "/images/CCEvents/groupphoto.JPG"}
-            type="image/jpg"
-            className="content-img auto-h"
-          />
-          <img
-            className="content-img auto-h"
-            src={process.env.PUBLIC_URL + "/images/CCEvents/groupphoto.JPG"}
-            alt="Our Team"
-          />
-        </picture>
+        <ImageContainer
+          name="groupphoto"
+          second="jpg"
+          alt="Our Team"
+          cssclass="content-img auto-h"
+          path="/images/CCEvents/"
+        />
         <h3 className="img-description">
           A project consited of the members:
           <br />
@@ -342,44 +340,20 @@ export const items = [
         </ul>
         <h2 className="content-tab">Development</h2>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <picture>
-            <source
-              className="content-img auto-h"
-              srcSet={
-                process.env.PUBLIC_URL + "/images/CCEvents/ccmockup1.webp"
-              }
-              type="image/webp"
-            />
-            <source
-              srcSet={process.env.PUBLIC_URL + "/images/CCEvents/ccmockup1.png"}
-              type="image/png"
-              className="content-img auto-h"
-            />
-
-            <img
-              className="content-img"
-              src={process.env.PUBLIC_URL + "/images/CCEvents/ccmockup1.png"}
-              alt="Mockup in Dark Mode"
-            />
-          </picture>
-          <picture>
-            <source
-              srcSet={
-                process.env.PUBLIC_URL + "/images/CCEvents/ccmockup2.webp"
-              }
-              type="image/webp"
-            />
-            <source
-              srcSet={process.env.PUBLIC_URL + "/images/CCEvents/ccmockup2.png"}
-              type="image/png"
-            />
-
-            <img
-              className="content-img"
-              src={process.env.PUBLIC_URL + "/images/CCEvents/ccmockup2.png"}
-              alt="Mockup in Light Mode"
-            />
-          </picture>
+          <ImageContainer
+            name="ccmockup1"
+            second="png"
+            alt="Mockup in Dark Mode"
+            cssclass="content-img"
+            path="/images/CCEvents/"
+          />
+          <ImageContainer
+            name="ccmockup2"
+            second="png"
+            alt="Mockup in Light Mode"
+            cssclass="content-img"
+            path="/images/CCEvents/"
+          />
         </div>
         <h3 className="img-description">
           Rough mockup made on Adobe XD of what the app would look like.
