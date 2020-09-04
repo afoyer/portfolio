@@ -13,8 +13,7 @@ export const items = [
   {
     title: "Radiosity-Based Renderer",
     titlecolor: "#ffffff",
-    imgsource:
-      "https://raw.githubusercontent.com/afoyer/portfolio/master/public/images/render.PNG",
+    imgsource: process.env.PUBLIC_URL + "/images/render.PNG",
     background: "#53090E",
     backgroundHover: "#f05545",
     content: (
@@ -179,8 +178,7 @@ export const items = [
   {
     title: "Events Application",
     titlecolor: "#ffffff",
-    imgsource:
-      "https://raw.githubusercontent.com/afoyer/portfolio/master/public/images/events.png",
+    imgsource: process.env.PUBLIC_URL + "/images/events.png",
     background: "#525F9D",
     backgroundHover: "#525F9D",
     content: (
@@ -188,11 +186,23 @@ export const items = [
         <h1 className="content-header">
           Our First Step Into React-Native (and JavaScript).
         </h1>
-        <img
-          className="content-img auto-h"
-          src="https://raw.githubusercontent.com/afoyer/portfolio/master/public/images/groupphoto.JPG"
-          alt="Our Team"
-        />
+        <picture>
+          <source
+            className="content-img auto-h"
+            srcSet={process.env.PUBLIC_URL + "/images/CCEvents/groupphoto.webp"}
+            type="image/webp"
+          />
+          <source
+            srcSet={process.env.PUBLIC_URL + "/images/CCEvents/groupphoto.JPG"}
+            type="image/jpg"
+            className="content-img auto-h"
+          />
+          <img
+            className="content-img auto-h"
+            src={process.env.PUBLIC_URL + "/images/CCEvents/groupphoto.JPG"}
+            alt="Our Team"
+          />
+        </picture>
         <h3 className="img-description">
           A project consited of the members:
           <br />
@@ -332,16 +342,44 @@ export const items = [
         </ul>
         <h2 className="content-tab">Development</h2>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <img
-            className="content-img"
-            src="https://raw.githubusercontent.com/afoyer/portfolio/master/public/images/ccmockup1.png"
-            alt="Mockup in Dark Mode"
-          />
-          <img
-            className="content-img"
-            src="https://raw.githubusercontent.com/afoyer/portfolio/master/public/images/ccmockup2.png"
-            alt="Mockup in Light Mode"
-          />
+          <picture>
+            <source
+              className="content-img auto-h"
+              srcSet={
+                process.env.PUBLIC_URL + "/images/CCEvents/ccmockup1.webp"
+              }
+              type="image/webp"
+            />
+            <source
+              srcSet={process.env.PUBLIC_URL + "/images/CCEvents/ccmockup1.png"}
+              type="image/png"
+              className="content-img auto-h"
+            />
+
+            <img
+              className="content-img"
+              src={process.env.PUBLIC_URL + "/images/CCEvents/ccmockup1.png"}
+              alt="Mockup in Dark Mode"
+            />
+          </picture>
+          <picture>
+            <source
+              srcSet={
+                process.env.PUBLIC_URL + "/images/CCEvents/ccmockup2.webp"
+              }
+              type="image/webp"
+            />
+            <source
+              srcSet={process.env.PUBLIC_URL + "/images/CCEvents/ccmockup2.png"}
+              type="image/png"
+            />
+
+            <img
+              className="content-img"
+              src={process.env.PUBLIC_URL + "/images/CCEvents/ccmockup2.png"}
+              alt="Mockup in Light Mode"
+            />
+          </picture>
         </div>
         <h3 className="img-description">
           Rough mockup made on Adobe XD of what the app would look like.
