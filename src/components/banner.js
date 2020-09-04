@@ -76,7 +76,7 @@ function Banner(props) {
           </motion.svg>{" "}
         </motion.a>
       </motion.div>
-      <motion.img
+      <motion.picture
         initial={{ opacity: 0, y: 80 }}
         animate={{
           y: 0,
@@ -84,8 +84,33 @@ function Banner(props) {
           transition: { delay: 2.5, duration: 2 },
         }}
         exit={{ opacity: 0 }}
-        src="https://raw.githubusercontent.com/afoyer/portfolio/master/src/assets/background%20(1).png"
-      />
+      >
+        <source
+          className="background-pic"
+          srcSet={process.env.PUBLIC_URL + "/images/background.webp"}
+          type="image/webp"
+        />
+        <source
+          srcSet={process.env.PUBLIC_URL + "/images/background.png"}
+          type="image/png"
+          className="background-pic"
+        />
+        <img
+          src={process.env.PUBLIC_URL + "/images/background.png"}
+          alt="test"
+          className="background-pic"
+        />
+      </motion.picture>
+      {/* <motion.img
+        initial={{ opacity: 0, y: 80 }}
+        animate={{
+          y: 0,
+          opacity: 0.5,
+          transition: { delay: 2.5, duration: 2 },
+        }}
+        exit={{ opacity: 0 }}
+        src="https://raw.githubusercontent.com/afoyer/portfolio/master/public/images/background.webp"
+      /> */}
     </motion.div>
   );
 }

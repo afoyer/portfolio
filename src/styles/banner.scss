@@ -1,7 +1,6 @@
 // I would clean this but I'm scared
 .home {
-  overflow: hidden;
-
+  padding-bottom: 70px;
   .aboutMe {
     width: 100%;
     margin: 0 auto;
@@ -66,7 +65,7 @@
         @include media("<=tablet") {
           text-align: center;
           font-size: 2.5rem;
-          margin: 25px;
+          margin: 25px 10px;
         }
 
         font-size: 3vw;
@@ -148,19 +147,24 @@
       }
     }
 
-    img {
-      -webkit-mask-image: -webkit-gradient(
-        linear,
-        right top,
-        right bottom,
-        from(rgba(0, 0, 0, 1) 90%),
-        to(rgba(0, 0, 0, 0))
-      );
-      mask-image: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 1) 90%,
-        rgba(0, 0, 0, 0)
-      );
+    img,
+    picture {
+      .background-pic {
+        display: block;
+        -webkit-mask-image: -webkit-gradient(
+          linear,
+          right top,
+          right bottom,
+          from(rgba(0, 0, 0, 1) 90%),
+          to(rgba(0, 0, 0, 0))
+        );
+        mask-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 1) 90%,
+          rgba(0, 0, 0, 0)
+        );
+      }
+
       display: block;
       position: absolute;
       z-index: 0;

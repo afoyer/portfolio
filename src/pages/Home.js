@@ -13,7 +13,10 @@ function Home() {
     <motion.div
       className="home"
       initial={false}
-      animate={{ background: color, transition: { type: "tween" } }}
+      animate={{
+        background: color,
+        transition: { type: "tween", duration: 0.2 },
+      }}
       exit={{ opacity: 0 }}
     >
       <Banner />

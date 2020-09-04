@@ -29,6 +29,7 @@ function CompactProjectCard({
   disabled,
   startColor,
   endColor,
+  index,
 }) {
   const setColor = () => {
     startColor(data.backgroundHover);
@@ -36,7 +37,7 @@ function CompactProjectCard({
   return (
     <motion.div
       className="card compact"
-      layoutId="expandable-card"
+      layoutId={`expandable-card${index}`}
       onClick={disabled ? undefined : onExpand}
       onHoverStart={setColor}
       onHoverEnd={endColor}
@@ -55,7 +56,7 @@ function CompactProjectCard({
   );
 }
 
-function ExpandedProjectCard({ children, data, onCollapse }) {
+function ExpandedProjectCard({ children, data, onCollapse, index }) {
   return (
     <>
       <motion.svg
@@ -77,7 +78,7 @@ function ExpandedProjectCard({ children, data, onCollapse }) {
       <motion.div
         // animate={{ scale: 1 }}
         className="card expanded"
-        layoutId="expandable-card"
+        layoutId={`expandable-card${index}`}
       >
         <motion.div
           className="title-bg"
@@ -114,7 +115,14 @@ function ExpandedProjectCard({ children, data, onCollapse }) {
     </>
   );
 }
-function ProjectItem({ data, onCollapse, onExpand, disabled, setColor }) {
+function ProjectItem({
+  number,
+  data,
+  onCollapse,
+  onExpand,
+  disabled,
+  setColor,
+}) {
   const [isOpen, setOpen] = useState(false);
   const collapseDate = () => {
     setOpen(false);
@@ -143,11 +151,16 @@ function ProjectItem({ data, onCollapse, onExpand, disabled, setColor }) {
     <AnimateSharedLayout>
       <motion.div className="card-container">
         {isOpen ? (
-          <ExpandedProjectCard onCollapse={collapseDate} data={data}>
+          <ExpandedProjectCard
+            onCollapse={collapseDate}
+            data={data}
+            index={number}
+          >
             <Content data={data} disabled={disabled} />
           </ExpandedProjectCard>
         ) : (
           <CompactProjectCard
+            index={number}
             onExpand={expandDate}
             disabled={disabled}
             startColor={startColor}

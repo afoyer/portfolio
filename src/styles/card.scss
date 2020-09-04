@@ -26,18 +26,18 @@
 }
 
 .project-title-div {
-  width: 100%;
+  // width: 100%;
   margin: 0 auto;
   margin-top: 3%;
-
   @include media("<=phone") {
     margin-top: 10%;
   }
 
   h1 {
+    // transform: rotate(-90deg);
     margin: 0 15%;
     font-size: 3rem;
-    // text-align: center;
+
     font-weight: bold;
 
     @include media("<=phone") {
@@ -82,8 +82,7 @@
   overflow-y: scroll;
 
   @include scrollbars(0, black, black);
-  background-color: rgba(55, 55, 55, 0.5);
-  backdrop-filter: blur(6px);
+  background-color: #1c1c1e;
   position: fixed;
   top: 55px;
   left: 0;
@@ -103,7 +102,7 @@
 
   .content {
     display: block;
-    color: #cccccc;
+    color: #9d9ca1;
     margin: 5% 5%;
     font-size: 1.5em;
   }
@@ -116,17 +115,17 @@
     position: sticky;
     cursor: pointer;
     z-index: 1;
-    box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.2);
-    height: 20vh;
     margin: auto;
     top: 0;
     display: flex;
     flex-direction: row-reverse;
+    align-items: center;
     justify-content: space-between;
 
     img {
       position: relative;
       width: 40%;
+      height: 100px;
       object-fit: cover;
       object-position: 50% 50%;
       -webkit-mask-image: -webkit-gradient(
@@ -198,8 +197,8 @@
 .compact {
   cursor: pointer;
   position: relative;
-  background-color: rgba(55, 55, 55, 0.5);
-  backdrop-filter: blur(6px);
+  border-radius: 5px;
+  background-color: #1c1c1e;
   width: 20vw;
   height: 20vw;
   margin: 5px 0;

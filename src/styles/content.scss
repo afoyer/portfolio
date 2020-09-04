@@ -8,7 +8,8 @@ $textcolor: white;
   }
 }
 .content-text {
-  margin: 0 10%;
+  text-indent: 30px;
+  margin: 20px 10%;
   font-size: 1rem;
   color: $textcolor;
   a {
@@ -16,9 +17,6 @@ $textcolor: white;
     font-size: inherit;
     font-weight: inherit;
     text-decoration: none;
-  }
-  @include media("<=phone") {
-    font-size: 1rem;
   }
 }
 .bold-opening {
@@ -28,12 +26,12 @@ $textcolor: white;
 .content-img {
   display: block;
   max-height: 400px;
+  max-width: 100%;
+  margin: 10px 0;
+}
+.auto-h {
   margin-left: auto;
   margin-right: auto;
-  margin: 10px auto;
-  @include media("<=phone") {
-    width: 100%;
-  }
 }
 .img-description {
   font-size: 1rem;
@@ -75,4 +73,9 @@ $textcolor: white;
     width: 100%;
     height: 100%;
   }
+}
+.content-list {
+  margin: 20px 10%;
+  font-size: 1rem;
+  color: $textcolor;
 }

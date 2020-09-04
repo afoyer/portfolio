@@ -46,7 +46,7 @@ function Nav(props) {
 
       backdropFilter: "blur(6px)",
       boxShadow: "0px 0px 0px -5px rgba(0, 0, 0, 0)",
-      transition: { delay: 0.1, duration: 0.3 },
+      transition: { delay: 0.1, duration: 0.1 },
     },
   };
   // Nav Elements outside name
@@ -72,7 +72,7 @@ function Nav(props) {
     <motion.div
       initial={{ y: "-10%", opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ delay: 1, duration: 1, delayChildrenChildren: 5 }}
+      transition={{ duration: 0.5, delayChildrenChildren: 5 }}
       className="header"
     >
       {/* Centers Navigation Bar and Sets up expanding animation */}

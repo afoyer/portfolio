@@ -15,11 +15,11 @@ function App() {
       <Nav />
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.key}>
-          <Route key="home" path="/" exact>
-            <Home />
-          </Route>
           <Route key="photos" path="/photos">
             <Projects />
+          </Route>
+          <Route key="home" path="/" exact>
+            <Home />
           </Route>
         </Switch>
       </AnimatePresence>
