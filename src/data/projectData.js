@@ -108,19 +108,14 @@ export const items = [
           degrees. Once that check is made and approved, the receiving dot is
           updated with a new light which is dependent on radiant flux.
         </p>
-        <a
-          rel="noopener noreferrer"
-          href="https://raw.githubusercontent.com/afoyer/portfolio/master/public/images/codeSnippet-min.png"
-          target="_blank"
-        >
-          <ImageContainer
-            name="codeSnippet-min"
-            second="png"
-            alt="Code Snippet"
-            cssclass="content-img auto-h"
-            path="/images/Radiosity/"
-          />
-        </a>
+
+        <ImageContainer
+          name="codeSnippet-min"
+          second="png"
+          alt="Code Snippet"
+          cssclass="content-img auto-h"
+          path="/images/Radiosity/"
+        />
         <h3 className="img-description">A lot of checking.</h3>
 
         <h2 className="content-subheader">Radiant Flux?</h2>
