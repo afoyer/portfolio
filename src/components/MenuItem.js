@@ -28,27 +28,55 @@ function MenuItem(props) {
     //This div is just so I can scale on hover...
 
     <motion.div whileHover={{ scale: 1.05 }}>
-      <Link to={props.link} style={{ textDecoration: "none" }}>
-        <motion.h3
-          whileHover={{
-            color: "#212121",
-            backgroundColor: props.backgroundSelectColor,
+      {!props.isAnchor && (
+        <Link to={props.link} style={{ textDecoration: "none" }}>
+          <motion.h3
+            whileHover={{
+              color: "#212121",
+              backgroundColor: props.backgroundSelectColor,
 
-            boxShadow: "0px 5px 15px 0px #fffff",
-          }}
-          whileTap={{
-            color: "#424242",
-            backgroundColor: "#ffffff",
-            transition: {
-              duration: 0.2,
-            },
-          }}
-          variants={itemVariants}
-          className="menuItem"
+              boxShadow: "0px 5px 15px 0px #fffff",
+            }}
+            whileTap={{
+              color: "#424242",
+              backgroundColor: "#ffffff",
+              transition: {
+                duration: 0.2,
+              },
+            }}
+            variants={itemVariants}
+            className="menuItem"
+          >
+            {props.name}
+          </motion.h3>
+        </Link>
+      )}
+      {props.isAnchor && (
+        <a
+          href={process.env.PUBLIC_URL + props.link}
+          style={{ textDecoration: "none" }}
         >
-          {props.name}
-        </motion.h3>
-      </Link>
+          <motion.h3
+            whileHover={{
+              color: "#212121",
+              backgroundColor: props.backgroundSelectColor,
+
+              boxShadow: "0px 5px 15px 0px #fffff",
+            }}
+            whileTap={{
+              color: "#424242",
+              backgroundColor: "#ffffff",
+              transition: {
+                duration: 0.2,
+              },
+            }}
+            variants={itemVariants}
+            className="menuItem"
+          >
+            {props.name}
+          </motion.h3>
+        </a>
+      )}
     </motion.div>
   );
 }

@@ -62,7 +62,8 @@ function Nav(props) {
       />
       <MenuItem
         name="RESUME"
-        link="/resume"
+        isAnchor="true"
+        link="/resume.pdf"
         backgroundSelectColor="rgba(255,255,255,1)"
       ></MenuItem>
     </motion.div>
