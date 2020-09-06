@@ -14,7 +14,7 @@ export const items = [
   {
     title: "Radiosity-Based Renderer",
     titlecolor: "#ffffff",
-    imgsource: process.env.PUBLIC_URL + "/images/render.PNG",
+    imgsource: process.env.PUBLIC_URL + "/images/render",
     background: "#53090E",
     backgroundHover: "#f05545",
     content: (
@@ -181,7 +181,7 @@ export const items = [
   {
     title: "Events Application",
     titlecolor: "#ffffff",
-    imgsource: process.env.PUBLIC_URL + "/images/events.png",
+    imgsource: process.env.PUBLIC_URL + "/images/events",
     background: "#525F9D",
     backgroundHover: "#525F9D",
     content: (
@@ -386,5 +386,13 @@ export const items = [
         </p>
       </>
     ),
+  },
+  {
+    title: "Navy Gray Novels",
+    titlecolor: "#FFFFFF",
+    imgsource:
+      process.env.PUBLIC_URL + "/images/adventures/adventures-landing-page",
+    background: "#cccccc",
+    backgroundHover: "rgba(37,37,37,0.7)",
   },
 ];

@@ -19,6 +19,10 @@ html,
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  ::selection {
+    color: rgb(166, 210, 247);
+    background: rgb(109, 109, 109);
+  }
 }
 .container {
   z-index: 4;

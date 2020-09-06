@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 
 import { motion, AnimateSharedLayout } from "framer-motion";
+/**
+ * Content at this point only holds the title of the project. it used to hold all content until I changed it to be more modular
+ * @param {*} param0
+ */
 function Content({ data, disabled }) {
   return (
     <motion.div className="title-div">
@@ -22,6 +26,10 @@ function Content({ data, disabled }) {
     </motion.div>
   );
 }
+/**
+ * Compact Card, Holds image and content but never displays content. Used for smooth transition between Compact and Expanded cards.
+ * @param {*} param0
+ */
 function CompactProjectCard({
   children,
   data,
@@ -39,8 +47,8 @@ function CompactProjectCard({
       className="card compact"
       layoutId={`expandable-card${index}`}
       onClick={disabled ? undefined : onExpand}
-      onHoverStart={setColor}
-      onHoverEnd={endColor}
+      onMouseEnter={setColor}
+      onMouseLeave={endColor}
     >
       <motion.div
         className="title-bg"
@@ -49,13 +57,20 @@ function CompactProjectCard({
           backgroundColor: data.background,
         }}
       >
-        <motion.img layoutId="image" src={data.imgsource} />
+        <picture>
+          <source srcSet={data.imgsource + ".webp"} type="image/webp" />
+          <source srcSet={data.imgsource + ".jpg"} type="image/jpg" />
+          <motion.img layoutId="image" src={data.imgsource} alt={data.title} />
+        </picture>
         {children}
       </motion.div>
     </motion.div>
   );
 }
-
+/**
+ * Expanded Card, Holds image and content mostly but will take onCollapse for AnimateSharedLayout purposes.
+ * @param {*} param0
+ */
 function ExpandedProjectCard({ children, data, onCollapse, index }) {
   return (
     <>
@@ -88,16 +103,22 @@ function ExpandedProjectCard({ children, data, onCollapse, index }) {
             background: data.background,
           }}
         >
-          <motion.img
-            layoutId="image"
-            src={data.imgsource}
-            initial={{ x: 20, opacity: 0 }}
-            animate={{
-              x: 0,
-              opacity: 1,
-              transition: { delay: 0.5, duration: 0.5 },
-            }}
-          />
+          <picture>
+            <source srcSet={data.imgsource + ".webp"} type="image/webp" />
+            <source srcSet={data.imgsource + ".jpg"} type="image/jpg" />
+            <motion.img
+              className="expanded-image"
+              layoutId="image"
+              src={data.imgsource}
+              alt={data.title}
+              initial={{ x: 20, opacity: 0 }}
+              animate={{
+                x: 0,
+                opacity: 1,
+                transition: { delay: 0.5, duration: 0.5 },
+              }}
+            />
+          </picture>
           {children}
         </motion.div>
         <motion.div
@@ -115,6 +136,10 @@ function ExpandedProjectCard({ children, data, onCollapse, index }) {
     </>
   );
 }
+/**
+ * ProjectItem is both the compact and expanded card. can set the background color on hover and click.
+ * @param {*} data - holds data of content (JSX style)
+ */
 function ProjectItem({
   number,
   data,

@@ -54,7 +54,7 @@ function Home() {
           }
         >
           I'm a recent graduate from Colorado College with a Computer Science
-          Major who is passionate about UI/UX design. I also love photography.
+          Major who is passionate about UI/UX design. <br/> I also love photography.
         </motion.h2>
         <motion.p
           initial={false}

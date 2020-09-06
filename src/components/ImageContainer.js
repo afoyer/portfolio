@@ -1,5 +1,9 @@
 import React from "react";
 
+/**
+ * Quicker way to have images with fallbacks for smaller payloads on load.
+ * @param {*} param0
+ */
 function ImageContainer({ name, second, alt, cssclass, path }) {
   return (
     <a
