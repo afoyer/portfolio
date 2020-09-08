@@ -80,3 +80,71 @@ html,
   transform: translateY(0);
   position: relative;
 }
+footer {
+  background-color: #212121;
+  // height: 75px;
+  // padding-bottom: 50px;
+  box-shadow: 0 -2px 5px black;
+  .seeme {
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+
+    color: #eeeeee;
+  }
+}
+.footer-links {
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  .logo-link {
+    svg {
+      fill: #eeeeee;
+
+      transition: fill 0.3s;
+    }
+    margin: 0 5%;
+    .instagram {
+      #insta_hover {
+        opacity: 0;
+
+        transition: opacity 0.3s;
+      }
+    }
+    &:hover {
+      .linkedin {
+        fill: rgb(0, 119, 181);
+      }
+      #insta_hover {
+        opacity: 1;
+      }
+      .github {
+        fill: #2b414e;
+      }
+
+      transition: fill 0.3s;
+
+      transition: opacity 0.3s;
+    }
+  }
+}
+.sourcecode {
+  margin: 0;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  padding: 5px 10px;
+  font-weight: 250;
+  text-align: right;
+  font-size: 0.75rem;
+}
+.linkhover {
+  transition: color 0.3s;
+  color: #2196f3;
+  text-decoration: none;
+  &:hover {
+    color: rgb(179, 28, 179);
+    transition: color 0.3s;
+  }
+}

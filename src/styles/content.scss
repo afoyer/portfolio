@@ -1,7 +1,5 @@
 $textcolor: white;
 .expanded-content {
-  padding-bottom: 15%;
-
   .content-header {
     text-align: center;
     color: $textcolor;
@@ -79,4 +77,22 @@ $textcolor: white;
   margin: 20px 10%;
   font-size: 1rem;
   color: $textcolor;
+}
+.content-github {
+  margin: 100px 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  a {
+    .logo {
+      fill: #eeeeee;
+      width: 50px;
+      height: 50px;
+
+      transition: fill 0.3s;
+      &:hover {
+        fill: rgb(60, 123, 196);
+      }
+    }
+  }
 }

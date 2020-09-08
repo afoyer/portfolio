@@ -3,6 +3,7 @@ import Banner from "../components/banner";
 import ItemList from "./../components/ItemList";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { Link } from "react-router-dom";
 function Home() {
   const [color, setColor] = useState("#fffff");
   function toggleColor(color) {
@@ -54,7 +55,11 @@ function Home() {
           }
         >
           I'm a recent graduate from Colorado College with a Computer Science
-          Major who is passionate about UI/UX design. <br/> I also love photography.
+          Major who stumbled on UI/UX design! <br /> I also love photography (
+          <Link to="/photos" className="linkhover">
+            check them out
+          </Link>
+          ).
         </motion.h2>
         <motion.p
           initial={false}

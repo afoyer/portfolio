@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 
 import { AnimatePresence } from "framer-motion";
+import Footer from "./components/Footer";
 
 function App() {
   const location = useLocation();
@@ -21,8 +22,11 @@ function App() {
           <Route key="home" path="/" exact>
             <Home />
           </Route>
+          <Route key="404" path="/"></Route>
         </Switch>
       </AnimatePresence>
+
+      <Footer />
     </>
   );
 }
