@@ -25,7 +25,7 @@ function ImageContainer({ name, second, alt, cssclass, path }) {
 
         <img
           className={cssclass}
-          src={process.env.PUBLIC_URL + path + +name + `.${second}`}
+          src={process.env.PUBLIC_URL + path + name + `.${second}`}
           alt={alt}
         />
       </picture>
