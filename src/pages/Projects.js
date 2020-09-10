@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import Flickr from "../components/flickr";
 
@@ -8,6 +8,21 @@ function Projects() {
   const [loading, setLoading] = useState(false);
   const [pagenumber, setPage] = useState(1);
   const [hasMore, isHasMore] = useState(true);
+  const observer = useRef();
+
+  const call = useCallback(
+    (node) => {
+      if (!loading) return;
+      if (observer.current) observer.current.disconnect();
+      observer.current = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          increase();
+        }
+      });
+      if (node) observer.current.observe(node);
+    },
+    [loading, hasMore]
+  );
   //Fetch images to display, unset loading state
   useEffect(() => {
     //If all images haven't been loaded yet, go and fetch images
@@ -103,24 +118,45 @@ function Projects() {
       </motion.div>
 
       <motion.div className="imageContainer">
-        {photos.map((photo) => {
-          return (
-            <a
-              rel="noreferrer noopener"
-              key={`imageAnchor${photo.id}`}
-              href={`https://www.flickr.com/photos/aymericf/${photo.id}`}
-              target="_blank"
-            >
-              <motion.img
-                key={photo.id}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="flickrImage"
-                src={photo.path}
-              />
-            </a>
-          );
+        {photos.map((photo, index) => {
+          if (index + 1 === photos.length) {
+            return (
+              <a
+                ref={call}
+                rel="noreferrer noopener"
+                key={`imageAnchor${photo.id}`}
+                href={`https://www.flickr.com/photos/aymericf/${photo.id}`}
+                target="_blank"
+              >
+                <motion.img
+                  key={photo.id}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="flickrImage"
+                  src={photo.path}
+                />
+              </a>
+            );
+          } else {
+            return (
+              <a
+                rel="noreferrer noopener"
+                key={`imageAnchor${photo.id}`}
+                href={`https://www.flickr.com/photos/aymericf/${photo.id}`}
+                target="_blank"
+              >
+                <motion.img
+                  key={photo.id}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="flickrImage"
+                  src={photo.path}
+                />
+              </a>
+            );
+          }
         })}
       </motion.div>
       {/* LOADING STATE */}
@@ -144,7 +180,6 @@ function Projects() {
           />
         </motion.div>
       )}
-      <button onClick={increase}> See More</button>
     </motion.div>
   );
 }

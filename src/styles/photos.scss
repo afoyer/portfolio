@@ -47,7 +47,7 @@
   justify-content: center;
   align-items: baseline;
   .flickrImage {
-    max-height: 300px;
+    height: 400px;
     width: auto;
     margin: auto 0;
     @include media("<=phone") {
