@@ -21,7 +21,7 @@ function Projects() {
       });
       if (node) observer.current.observe(node);
     },
-    [loading, hasMore]
+    [loading]
   );
   //Fetch images to display, unset loading state
   useEffect(() => {
