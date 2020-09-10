@@ -24,7 +24,7 @@ function Projects() {
         setLoading(true);
       });
     }
-  }, [pagenumber]);
+  }, [pagenumber, hasMore]);
   function increase() {
     setPage((page) => page + 1);
   }

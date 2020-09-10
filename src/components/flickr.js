@@ -1,6 +1,3 @@
-import React, { useEffect } from "react";
-import { motion } from "framer-motion";
-
 /**
  * Flickr fetches pictures from *my* profile and creates an <img> array
  * with links to images to display (currently 15 per page) with clickable links
