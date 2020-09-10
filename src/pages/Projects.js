@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Flickr from "../components/flickr";
 
 function Projects() {
-  const imageperpage = 15;
+  const imageperpage = 12;
   const [photos, storePhotos] = useState([]);
   const [loading, setLoading] = useState(false);
   const [pagenumber, setPage] = useState(1);
@@ -15,13 +15,14 @@ function Projects() {
       if (!loading) return;
       if (observer.current) observer.current.disconnect();
       observer.current = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
+        if (entries[0].isIntersecting && hasMore) {
           increase();
+          console.log(pagenumber);
         }
       });
       if (node) observer.current.observe(node);
     },
-    [loading]
+    [loading, hasMore]
   );
   //Fetch images to display, unset loading state
   useEffect(() => {
@@ -134,6 +135,7 @@ function Projects() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   className="flickrImage"
+                  whileHover={{ scale: 1.05 }}
                   src={photo.path}
                 />
               </a>
@@ -151,6 +153,7 @@ function Projects() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
+                  whileHover={{ scale: 1.05 }}
                   className="flickrImage"
                   src={photo.path}
                 />
