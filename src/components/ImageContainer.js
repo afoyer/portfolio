@@ -18,7 +18,7 @@ function ImageContainer({ name, second, alt, cssclass, path }) {
           type="image/webp"
         />
         <source
-          srcSet={process.env.PUBLIC_URL + path + +name + `.${second}`}
+          srcSet={process.env.PUBLIC_URL + path + name + `.${second}`}
           type={`image/${second}`}
           className={cssclass}
         />
