@@ -26,7 +26,9 @@ Link to [website](https://afoyer.github.io/portfolio) (currently in development)
 -   Project Cards that expand with a cool animation! 
 -   Added a photos page that calls my flickr account to display pictures I have taken. :camera:
 
-
+## What I am working on.
+-   Infinite Scrolling on pictures (smaller payload on initial load)
+-   More Content!
 
 
 
