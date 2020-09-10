@@ -24,6 +24,7 @@ Link to [website](https://afoyer.github.io/portfolio) (currently in development)
 -   Responsive design
 -   Layout Projects with *fluid* motions
 -   Project Cards that expand with a cool animation! 
+-   Image fallback from .webp to whatever other format is chosen.
 -   Added a photos page that calls my flickr account to display pictures I have taken. :camera:
 
 ## What I am working on.
