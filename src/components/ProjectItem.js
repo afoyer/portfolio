@@ -59,7 +59,7 @@ function CompactProjectCard({
       >
         <picture>
           <source srcSet={data.imgsource + ".webp"} type="image/webp" />
-          <source srcSet={data.imgsource + ".jpg"} type="image/jpg" />
+          <source srcSet={data.imgsource + ".jpg"} type="image/jpeg" />
           <motion.img layoutId="image" src={data.imgsource} alt={data.title} />
         </picture>
         {children}
@@ -105,7 +105,7 @@ function ExpandedProjectCard({ children, data, onCollapse, index }) {
         >
           <picture>
             <source srcSet={data.imgsource + ".webp"} type="image/webp" />
-            <source srcSet={data.imgsource + ".jpg"} type="image/jpg" />
+            <source srcSet={data.imgsource + ".jpg"} type="image/jpeg" />
             <motion.img
               className="expanded-image"
               layoutId="image"
