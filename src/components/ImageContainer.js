@@ -19,7 +19,7 @@ function ImageContainer({ name, second, alt, cssclass, path }) {
         />
         <source
           srcSet={process.env.PUBLIC_URL + path + name + `.${second}`}
-          type={`image/${second}`}
+          type={`image/${(second === 'jpg') ? 'jpeg' : second}`}
           className={cssclass}
         />
 
