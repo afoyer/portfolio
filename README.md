@@ -26,10 +26,11 @@ Link to [website](https://afoyer.github.io/portfolio) (currently in development)
 -   Project Cards that expand with a cool animation! 
 -   Image fallback from .webp to whatever other format is chosen.
 -   Added a photos page that calls my flickr account to display pictures I have taken. :camera:
+-   Infinite Scrolling on pictures (smaller payload on initial load)
 
 ## What I am working on.
--   Infinite Scrolling on pictures (smaller payload on initial load)
 -   More Content!
+-   More Animations!
 
 
 
@@ -37,5 +38,5 @@ Link to [website](https://afoyer.github.io/portfolio) (currently in development)
 
 &copy; Aymeric Foyer 2020.
 
-Made with :heart: and a lot of :musical_note:.
+Made with :heart: and a lot of music.
 
