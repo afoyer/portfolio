@@ -24,6 +24,9 @@ html,
     background: rgb(109, 109, 109);
   }
 }
+* {
+  -webkit-overflow-scrolling: touch;
+}
 .container {
   z-index: 4;
   background-color: transparent;
