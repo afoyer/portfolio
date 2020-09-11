@@ -2,7 +2,8 @@
   // overflow-x: hidden;
   position: relative;
   width: 100%;
-  // padding-top: 5%;
+  //fix padding from images
+  padding-bottom: 10px;
   min-height: 100%;
   background-color: #212121;
   @include media("<=phone") {
