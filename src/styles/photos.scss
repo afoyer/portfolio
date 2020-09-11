@@ -65,10 +65,10 @@
     }
   }
   .flickrImage {
-    max-width: 768px;
+    max-width: 750px;
     height: 100%;
     @include media("<=tablet") {
-      width: 90%;
+      width: 100%;
       height: unset;
     }
   }
