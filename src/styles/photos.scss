@@ -51,21 +51,23 @@
     height: 400px;
 
     width: auto;
+    // max-width: 100%;
     margin: 10px 10px;
     @include media("<=tablet") {
       max-width: 90%;
       height: unset;
+
+      max-height: unset;
     }
     @include media("<=phone") {
       height: unset;
-      max-height: unset;
     }
   }
   .flickrImage {
-    // width: 100%;
+    max-width: 768px;
     height: 100%;
     @include media("<=tablet") {
-      width: 100%;
+      width: 90%;
       height: unset;
     }
   }
