@@ -204,8 +204,10 @@
   position: relative;
   border-radius: 5px;
   background-color: #1c1c1e;
-  width: 350px;
-  height: 350px;
+  width: 27vw;
+  height: 27vw;
+  max-width: 500px;
+  max-height: 500px;
   margin: 5px 0;
 
   @include media("<=phone") {
