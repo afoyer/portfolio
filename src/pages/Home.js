@@ -55,25 +55,19 @@ function Home() {
           }
         >
           I'm a recent graduate from Colorado College with a Computer Science
-          Major who stumbled on UI/UX design! <br /> I also love photography (
+          Major who got interested in front end development. <br /> I also love
+          photography (
           <Link to="/photos" className="linkhover">
-            check them out
+            check my photos out
           </Link>
           ).
+          <br />
+          <br />
+          Feel free to contact me through socials or at{" "}
+          <a className="linkhover" href="mailto:aymeric.foyer@gmail.com">
+            aymeric.foyer@gmail.com
+          </a>
         </motion.h2>
-        <motion.p
-          initial={false}
-          animate={
-            inView
-              ? {
-                  color: "#212121",
-                  opacity: 1,
-                  y: 0,
-                  transition: { duration: 0.5 },
-                }
-              : { opacity: 0, y: 100, transition: { duration: 1 } }
-          }
-        ></motion.p>
       </motion.div>
       <ItemList setColor={toggleColor} />
     </motion.div>
