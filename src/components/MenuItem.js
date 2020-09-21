@@ -2,7 +2,13 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-//MenuItem is just an Anchor animated tag. Can set href and name using props
+/**
+ * MenuItem is just an Anchor animated tag. Can set href and name using props.
+ * @param {*} props
+ * backgroundSelectColor: sets background of item when hovered.
+ * link: sets href to desired link.
+ * isAnchor: true means that the item is not a route and thus must be handled as a regular anchor.
+ */
 
 function MenuItem(props) {
   //Framer Motion Variants. May remove if I want to make it a prop
@@ -51,6 +57,7 @@ function MenuItem(props) {
           </motion.h3>
         </Link>
       )}
+      {/* Since the menu item can be both a link to a file or a route I had to make sure it could be both without overlapping. */}
       {props.isAnchor && (
         <a
           href={process.env.PUBLIC_URL + props.link}

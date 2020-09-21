@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-// import "../styles/header.scss";
 import MenuItem from "./MenuItem";
 import { Link } from "react-router-dom";
-//VARIANTS
+// *****VARIANTS******
 
 //Logo Variants
 const textVariants = {
@@ -24,7 +23,7 @@ const textVariants = {
   },
 };
 
-function Nav(props) {
+function Nav() {
   //State handler for hovering effect on NavBar
   const [open, setOpen] = useState(false);
   function flip() {
@@ -49,7 +48,7 @@ function Nav(props) {
       transition: { delay: 0.1, duration: 0.1 },
     },
   };
-  // Nav Elements outside name
+  // Nav Elements outside name. To be honest this could have been avoided or turned into a more proper component.
   const addOn = (
     <motion.div
       className="addOnMenu"
@@ -76,7 +75,7 @@ function Nav(props) {
       transition={{ duration: 0.5, delayChildrenChildren: 5 }}
       className="header"
     >
-      {/* Centers Navigation Bar and Sets up expanding animation */}
+      {/* This div is there for debut animation and color changes when hovered. */}
       <motion.div
         variants={containerVariants}
         initial={false}
@@ -93,7 +92,6 @@ function Nav(props) {
         <div className="row v-center">
           {/* INFOCONTACT STUFF */}
           <motion.div className="logo">
-            {/* MY NAME */}
             <Link to="/" style={{ textDecoration: "none" }}>
               <motion.svg
                 whileHover={{
@@ -122,6 +120,7 @@ function Nav(props) {
               </motion.svg>
             </Link>
           </motion.div>
+          {/* Menu links */}
           {addOn}
         </div>
       </motion.div>

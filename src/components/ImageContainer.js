@@ -2,6 +2,7 @@ import React from "react";
 
 /**
  * Quicker way to have images with fallbacks for smaller payloads on load.
+ * Currently defaults to webp then falls back to specified file type (makes sure jpg is jpeg type too)
  * @param {*} param0
  */
 function ImageContainer({ name, second, alt, cssclass, path }) {

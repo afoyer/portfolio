@@ -1,17 +1,14 @@
 .header {
   position: fixed;
-  // width: 100%;
   height: 70px;
   top: 20px;
   z-index: 4;
   margin-left: 5%;
   margin-right: auto;
-  // color: inherit;
   @include media("<=phone") {
     width: 100%;
     height: unset;
     margin: 0;
-    // padding-top: 20px;
     top: 0;
   }
 
@@ -29,7 +26,6 @@
       display: block;
       transform: scale(1.2);
       width: 50px;
-      // scale: 0.5;
       @include media("<=phone") {
         padding-top: 20px;
         margin: 0 auto;
@@ -64,7 +60,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    // padding: 10px 0;
     @include media("<=phone") {
       justify-content: space-around;
       padding-bottom: 20px;

@@ -1,9 +1,13 @@
 import React, { useEffect, useState, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import Flickr from "../components/flickr";
-
-function Projects() {
+/**
+ * Photos Page.
+ */
+function Photos() {
   const imageperpage = 12;
+
+  //Setup for infinite scrolling.
   const [photos, storePhotos] = useState([]);
   const [loading, setLoading] = useState(false);
   const [pagenumber, setPage] = useState(1);
@@ -116,7 +120,7 @@ function Projects() {
           .
         </motion.h1>
       </motion.div>
-
+      {/* Photo Div */}
       <motion.div className="imageContainer">
         {photos.map((photo, index) => {
           if (index + 1 === photos.length) {
@@ -185,4 +189,4 @@ function Projects() {
     </motion.div>
   );
 }
-export default Projects;
+export default Photos;

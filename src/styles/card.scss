@@ -1,3 +1,5 @@
+//Card Specific Related CSS
+
 //scrollBar stuff
 @mixin scrollbars(
   $size,
@@ -26,7 +28,6 @@
 }
 
 .project-title-div {
-  // width: 100%;
   margin: 0 auto;
   margin-top: 3%;
   @include media("<=phone") {
@@ -34,7 +35,6 @@
   }
 
   h1 {
-    // transform: rotate(-90deg);
     margin: 0 15%;
     font-size: 3rem;
 
@@ -50,12 +50,10 @@
 
 .project-container {
   width: 100%;
-  //   height: 100%; //   display: flex;
-
   @include media("<=phone") {
     margin: auto;
   }
-
+  //this is called dates because it only used to hold the date of the project. now it is a lot more important...
   .dates {
     display: flex;
     flex-wrap: wrap;
@@ -107,7 +105,9 @@
     font-size: 1.5em;
   }
 }
-
+/**Yes. I know I have two expanded classes here. But the one 
+above really is only for the expanded card itself while this one has all the inner components.
+*/
 .expanded {
   border-radius: 10px;
 
@@ -127,7 +127,6 @@
       position: relative;
       width: 40%;
       height: 100%;
-      // overflow: hidden;
       img {
         width: 100%;
         height: 100%;
@@ -220,18 +219,6 @@
   }
 
   img {
-    // -webkit-mask-image: -webkit-gradient(
-    //   linear,
-    //   right top,
-    //   left top,
-    //   from(rgba(0, 0, 0, 1) 90%),
-    //   to(rgba(0, 0, 0, 0))
-    // );
-    // mask-image: linear-gradient(
-    //   to left,
-    //   rgba(0, 0, 0, 1) 90%,
-    //   rgba(0, 0, 0, 0)
-    // );
     object-fit: cover;
     width: 100%;
     height: 100%;

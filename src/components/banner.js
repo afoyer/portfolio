@@ -3,9 +3,8 @@ import { motion } from "framer-motion";
 import SlidingName from "./slidingName";
 import { slidedatamain, slidedatasub } from "./../data/slidedata";
 
-function Banner(props) {
-  //Might move this separatly later
-
+function Banner() {
+  //Might move this separatly later. Variants.
   const container = {
     hidden: { opacity: 0, y: -10 },
     show: {
@@ -76,6 +75,7 @@ function Banner(props) {
           </motion.svg>{" "}
         </motion.a>
       </motion.div>
+      {/* You might be wondering. Why not use ImageContainer? Because ImageContainer renders non-motion img. */}
       <motion.picture
         initial={{ opacity: 0, y: 80 }}
         animate={{
@@ -101,16 +101,6 @@ function Banner(props) {
           className="background-pic"
         />
       </motion.picture>
-      {/* <motion.img
-        initial={{ opacity: 0, y: 80 }}
-        animate={{
-          y: 0,
-          opacity: 0.5,
-          transition: { delay: 2.5, duration: 2 },
-        }}
-        exit={{ opacity: 0 }}
-        src="https://raw.githubusercontent.com/afoyer/portfolio/master/public/images/background.webp"
-      /> */}
     </motion.div>
   );
 }

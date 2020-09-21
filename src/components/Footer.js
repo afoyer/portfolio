@@ -1,6 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-
+/**
+ * Footer Component for webpage. Currently only holds social media svgs for me.
+ * Might want to make hrefs into props.
+ */
 function Footer() {
   return (
     <motion.footer>

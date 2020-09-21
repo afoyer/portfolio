@@ -13,10 +13,7 @@
     }
 
     h2 {
-      // text-align: center;
       width: 50%;
-      // max-width: 600px;
-      // display: inline;
       margin: 20px auto;
 
       font-size: 2rem;
@@ -62,8 +59,6 @@
       }
 
       h1 {
-        // text-shadow: 0px 1px 20px white;
-
         line-height: 100%;
         margin: 0 15%;
 
@@ -79,7 +74,6 @@
         @include media("<=phone") {
           text-align: center;
           font-size: 2.5rem;
-          // margin-left: 15%;
         }
 
         span {
@@ -95,14 +89,12 @@
             margin: 10px;
           }
           @include media("<=phone") {
-            // display: block;
             font-size: 2.5rem;
           }
         }
       }
 
       h2 {
-        // text-shadow: 0px 1px 5px white;
         margin: 0 15%;
         font-size: 3vw;
         font-weight: 700;

@@ -5,6 +5,10 @@ import { useInView } from "react-intersection-observer";
 
 import { items } from "../data/projectData";
 
+/**
+ * Item list is the collection of all ProjectItems (Expanded/Collapsed Cards) into one flex div.
+ * @param {*} props setColor: Callback for setColor (currently used in home for background change on hover/click)
+ */
 function ItemList(props) {
   const [expandedDay, setCollapsedDay] = useState();
 

@@ -4,12 +4,18 @@ import ItemList from "./../components/ItemList";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
+/**
+ * HomePage.
+ */
 function Home() {
+  //Background color modifier. Currently used by project cards through callbacks.
   const [color, setColor] = useState("#fffff");
   function toggleColor(color) {
     setColor(color);
   }
+  //intersection observer to make divs "appear" when in view.
   const [ref, inView] = useInView({ threshold: 0.7, triggerOnce: true });
+
   return (
     <motion.div
       className="home"

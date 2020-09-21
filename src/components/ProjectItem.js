@@ -39,6 +39,7 @@ function CompactProjectCard({
   endColor,
   index,
 }) {
+  //function that calls back prop to set background color.
   const setColor = () => {
     startColor(data.backgroundHover);
   };
@@ -139,6 +140,7 @@ function ExpandedProjectCard({ children, data, onCollapse, index }) {
 }
 /**
  * ProjectItem is both the compact and expanded card. can set the background color on hover and click.
+ * Switches from compact card to expanded when clicked and opposite. Transitions smoothly thanks to animatesharedpresence.
  * @param {*} data - holds data of content (JSX style)
  */
 function ProjectItem({
@@ -150,12 +152,8 @@ function ProjectItem({
   setColor,
 }) {
   const [isOpen, setOpen] = useState(false);
-  const collapseDate = () => {
-    setOpen(false);
-    onCollapse();
-    enableBodyScroll("#expanded");
-    setColor("#ffffff");
-  };
+
+  //Color callbacks for background changes
   const startColor = (color) => {
     if (!disabled) {
       setColor(color);
@@ -166,12 +164,17 @@ function ProjectItem({
       setColor("#ffffff");
     }
   };
+  //Switches for cards to transition between each other.
+  const collapseDate = () => {
+    setOpen(false);
+    onCollapse();
+    enableBodyScroll("#expanded");
+    setColor("#ffffff");
+  };
   const expandDate = () => {
     setOpen(true);
     disableBodyScroll("#expanded");
     onExpand();
-    // setColor();
-
     setColor(data.background);
   };
   return (
