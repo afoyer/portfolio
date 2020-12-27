@@ -61,7 +61,7 @@ function Home() {
           }
         >
           I'm a recent graduate from Colorado College with a Computer Science
-          Major who got interested in front end development. <br /> I also love
+          Major who got interested in front end development and am constantly trying new things. <br /> I also love
           photography (
           <Link to="/photos" className="linkhover">
             check my photos out
@@ -69,11 +69,35 @@ function Home() {
           ).
           <br />
           <br />
-          Feel free to contact me through socials or at{" "}
-          <a className="linkhover" href="mailto:aymeric.foyer@gmail.com">
-            aymeric.foyer@gmail.com
+          This webpage was made using <a className="linkhover" href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">
+            ReactJS
+          </a>, <a className="linkhover" href="https://www.framer.com/motion/" target="_blank" rel="noopener noreferrer">
+           Framer Motion
           </a>
+          , and the <a className="linkhover" href="https://www.flickr.com/services/api/" target="_blank" rel="noopener noreferrer">
+            Flickr API
+          </a> to fetch my pictures.
+          <br />
+          <br />
+          
         </motion.h2>
+        <motion.h2
+        className="mail"
+          initial={false}
+          animate={
+            inView
+              ? {
+                  color: "#212121",
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.5 },
+                }
+              : { opacity: 0, y: 100, transition: { duration: 1 } }
+          }
+        >Contact me through socials or through {" "}
+        <a className="linkhover" href="mailto:aymeric.foyer@gmail.com">
+           email
+        </a></motion.h2>
       </motion.div>
       <ItemList setColor={toggleColor} />
     </motion.div>
