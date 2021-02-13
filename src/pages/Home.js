@@ -60,14 +60,13 @@ function Home() {
               : { opacity: 0, y: 100, transition: { duration: 1 } }
           }
         >
-          I'm a recent graduate from Colorado College with a Computer Science
-          Major who got interested in front end development and am constantly trying new things. <br /> I also love
-          photography (
+          I'm a French/American front-end developer with interests in design, user experiences, and photography <br/>
           <Link to="/photos" className="linkhover">
-            check my photos out
+            Check my photos out.
           </Link>
-          ).
+          
           <br />
+          I am constantly trying new things, taking more pictures, and asking people to react to what I make. I care a lot about what people think.
           <br />
           This webpage was made using <a className="linkhover" href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">
             ReactJS
@@ -79,7 +78,7 @@ function Home() {
           </a> to fetch my pictures.
           <br />
           <br />
-          
+          Anyways, this was my first major project after graduating and it was extremely fun to make. I hope you enjoy it too!
         </motion.h2>
         <motion.h2
         className="mail"
@@ -97,7 +96,7 @@ function Home() {
         >Contact me through socials or through {" "}
         <a className="linkhover" href="mailto:aymeric.foyer@gmail.com">
            email
-        </a></motion.h2>
+        </a>.</motion.h2>
       </motion.div>
       <ItemList setColor={toggleColor} />
     </motion.div>
