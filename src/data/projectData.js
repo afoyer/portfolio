@@ -67,7 +67,7 @@ export const items = [
         <h2 className="content-tab">Result</h2>
         <div className="content-github">
           <a
-            href="https://github.com/afoyer/EventsApp"
+            href="https://pantonify.herokuapp.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
