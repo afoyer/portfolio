@@ -60,13 +60,12 @@ function Home() {
               : { opacity: 0, y: 100, transition: { duration: 1 } }
           }
         >
-          I'm a French/American front-end developer with interests in design, user experiences, and photography <br/>
-          <Link to="/photos" className="linkhover">
-            Check my photos out.
-          </Link>
+          I'm a French/American front-end developer with interests in design, user experiences, and photography. <br/>
+          
+          
           
           <br />
-          I am constantly trying new things, taking more pictures, and asking people to react to what I make. I care a lot about what people think.
+          I am currently a Front End Engineer at <motion.a href='https://aws.amazon.com/' target='_blank' className='linkhover amazon' >Amazon Web Services</motion.a>.
           <br />
           This webpage was made using <a className="linkhover" href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">
             ReactJS
@@ -75,11 +74,13 @@ function Home() {
           </a>
           , and the <a className="linkhover" href="https://www.flickr.com/services/api/" target="_blank" rel="noopener noreferrer">
             Flickr API
-          </a> to fetch my pictures.
-          <br />
+          </a>.
           <br />
           Anyways, this was my first major project after graduating and it was extremely fun to make. I hope you enjoy it too!
+          
+
         </motion.h2>
+        
         <motion.h2
         className="mail"
           initial={false}
@@ -93,7 +94,14 @@ function Home() {
                 }
               : { opacity: 0, y: 100, transition: { duration: 1 } }
           }
-        >Contact me through socials or through {" "}
+        >
+          
+          <Link to="/photos" className="linkhover">
+            Check my photos out.
+          </Link>
+          <br/>
+          <br/>
+          Contact me through socials or through {" "}
         <a className="linkhover" href="mailto:aymeric.foyer@gmail.com">
            email
         </a>.</motion.h2>

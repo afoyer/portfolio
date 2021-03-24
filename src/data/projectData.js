@@ -6,6 +6,89 @@ export const items = [
    *
    *
    *
+   * Pantonify
+   *
+   *
+   *
+   */
+  {
+    title: "Pantonify",
+    titlecolor: "#ffffff",
+    imgsource: process.env.PUBLIC_URL + "/images/pantonify/pantonify",
+    background: "#1DB954",
+    backgroundHover: "#1DB954",
+    content: (
+      <>
+        <h1 className="content-header">See The Color in Your Favorite Songs</h1>
+        <h3 className="img-description">Written on 3/24/2021</h3>
+        <h2 className="content-tab">Intro</h2>
+        <p className="content-text">
+          After creating adventures-in-time, I set off myself to make something more to what I wanted to make all along. I had played around a bit with APIs with this very website and Flickr but I wanted to go further.
+        </p>
+        <p className="content-text">
+          I first started playing around with <a
+              className="linkhover"
+              rel="noopener noreferrer"
+              href="https://nextjs.org/"
+              target="_blank"
+            >
+              NextJS
+            </a> and the Reddit API to figure out authentication. Little did I know that I had to end up <a
+              className="linkhover"
+              rel="noopener noreferrer"
+              href="https://github.com/nextauthjs/next-auth/pull/1094"
+              target="_blank"
+            >
+              fixing a bug
+            </a> in the repository because Reddit was not in fact working on it. Thanks for having different Authorization headers, Reddit.
+
+        </p>
+        <h2 className="content-tab">Production</h2>
+        <ImageContainer
+          name="pantonify-sketch"
+          second="png"
+          alt="Concept"
+          cssclass="content-img auto-h"
+          path="/images/pantonify/"
+        />
+
+        <h3 className="img-description">
+          Early Mockup of Final Product
+        </h3>
+        <p className="content-text">After getting a mockup done on Figma, I went straight to putting all of it together. I used a library to get the average color of an image (in this case, the album art) and then ran it through another library to get the nearest Pantone color. I then tried to create a faithful recreation of a <a
+              className="linkhover"
+              rel="noopener noreferrer"
+              href="https://www.pantone.com/color-bridge-guide-set-coated-uncoated"
+              target="_blank"
+            >
+              color match card
+            </a> which turned out to be a great learning experience about CSS flexboxes.</p>
+            <p className="content-text"> I got a lot of feedback on what to change/improve and it also enabled me to debug things I never thought of, such as making sure someone has listened to music on Spotify</p>
+        <h2 className="content-tab">Result</h2>
+        <div className="content-github">
+          <a
+            href="https://github.com/afoyer/EventsApp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              className="logo"
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+            ><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </a>
+        </div>
+        
+            
+      </>
+    ),
+  },
+  /**
+   *
+   *
+   *
    * RADIOSITY
    *
    *
