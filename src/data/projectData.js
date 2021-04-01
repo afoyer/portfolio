@@ -21,29 +21,6 @@ export const items = [
       <>
         <h1 className="content-header">See The Color in Your Favorite Songs</h1>
         <h3 className="img-description">Written on 3/24/2021</h3>
-        <h2 className="content-tab">Intro</h2>
-        <p className="content-text">
-          After creating adventures-in-time, I set off myself to make something more to what I wanted to make all along. I had played around a bit with APIs with this very website and Flickr but I wanted to go further.
-        </p>
-        <p className="content-text">
-          I first started playing around with <a
-              className="linkhover"
-              rel="noopener noreferrer"
-              href="https://nextjs.org/"
-              target="_blank"
-            >
-              NextJS
-            </a> and the Reddit API to figure out authentication. Little did I know that I had to end up <a
-              className="linkhover"
-              rel="noopener noreferrer"
-              href="https://github.com/nextauthjs/next-auth/pull/1094"
-              target="_blank"
-            >
-              fixing a bug
-            </a> in the repository because Reddit was not in fact working on it. Thanks for having different Authorization headers, Reddit.
-
-        </p>
-        <h2 className="content-tab">Production</h2>
         <ImageContainer
           name="pantonify-sketch"
           second="png"
@@ -53,18 +30,11 @@ export const items = [
         />
 
         <h3 className="img-description">
-          Early Mockup of Final Product
+          early mockup of final product which is very similar to what I ended up making.
         </h3>
-        <p className="content-text">After getting a mockup done on Figma, I went straight to putting all of it together. I used a library to get the average color of an image (in this case, the album art) and then ran it through another library to get the nearest Pantone color. I then tried to create a faithful recreation of a <a
-              className="linkhover"
-              rel="noopener noreferrer"
-              href="https://www.pantone.com/color-bridge-guide-set-coated-uncoated"
-              target="_blank"
-            >
-              color match card
-            </a> which turned out to be a great learning experience about CSS flexboxes.</p>
-            <p className="content-text"> I got a lot of feedback on what to change/improve and it also enabled me to debug things I never thought of, such as making sure someone has listened to music on Spotify</p>
-        <h2 className="content-tab">Result</h2>
+        <h2 className="content-tab">About</h2>
+        <p className="content-text">Pantonify is a Spotify plug-in that takes someone's top 4 favorite songs from the past month, six months or all time, and turn them into a Pantone color guide-inspired card. 
+        This project was built over the course of two weeks with the use of React, NextJS, Next-Auth, the Spotify API, and other libaries to handle album art and colors.  </p> 
         <div className="content-github">
           <a
             href="https://pantonify.herokuapp.com/"
@@ -144,7 +114,7 @@ export const items = [
         />
 
         <h3 className="img-description">
-          A very rough/early mockup of what we were doing.
+          A very rough visual brainstorm session.
         </h3>
         <p className="content-text">
           Essentially what you see up here is the basis of a{" "}
@@ -158,11 +128,14 @@ export const items = [
           </a>{" "}
           renderer. The advantage that a radiosity-based renderer gave us was
           the ability to fully move around the scene once it was rendered since
-          all dots now had their values set.
+          all dots now had their values set while still being relatively snappy.
         </p>
         <h2 className="content-subheader">
           That's great, but what does it mean?
         </h2>
+        <p className="content-text">
+          Just a warning: If you expect a good <i>written</i> explanation from me, prepare to be disappointed.
+        </p>
         <p className="content-text">
           We decided to create planes with them having grids of dots within them
           that are evenly spaced to cover the whole plane.
@@ -202,17 +175,15 @@ export const items = [
           cssclass="content-img auto-h"
           path="/images/Radiosity/"
         />
-        <h3 className="img-description">A lot of checking.</h3>
+        <h3 className="img-description">A lot of (not so clean) checking.</h3>
 
         <h2 className="content-subheader">Radiant Flux?</h2>
         <p className="content-text">
-          Yes! It is essentially how much energy is transferred from one light
-          to the other since if the light transfer were 1-to-1 the whole scene
-          would just be a ball of light.
+          Radiant flux is how much energy is transferred from one light to the other. If the light transfer were one-to-one, the whole scene would just be a ball of light.
         </p>
         <h2 className="content-tab">Problems</h2>
         <p className="content-text">
-          The first problem I noticed was that since our program was going to be
+          The first problem we noticed was that since our program was going to be
           single threaded, it was going to be slow. While adding a progress
           indicator was nice we had to figure out a faster way to process all
           the dots in a shorter time (since our renders could take hours if the
@@ -312,6 +283,8 @@ export const items = [
           <br />
           and me
         </h3>
+        <h2 className="content-tab">Before We Start</h2>
+        <p className="content-text">The information below is a recap of the written portion of this project. It was used as a foundaction for presenting it as our senior project. </p>
         <h2 className="content-tab">Intro</h2>
         <h2 className="content-subheader">Client</h2>
         <p className="content-text">
@@ -594,16 +567,21 @@ export const items = [
           use. Things such as image optimization made images load up to 85%
           faster than before thanks to smarter sizing.
         </p>
-        <h2 className="content-subheader">
+        <div className="content-github">
           <a
-            className="linkhover"
-            rel="noopener noreferrer"
             href="https://adventures-in-time.com/"
             target="_blank"
+            rel="noopener noreferrer"
           >
-            Check out the website here.
+            <svg
+              className="logo"
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+            ><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
           </a>
-        </h2>
+        </div>
       </>
     ),
   },
