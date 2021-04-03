@@ -33,8 +33,8 @@ export const items = [
           early mockup of final product which is very similar to what I ended up making.
         </h3>
         <h2 className="content-tab">About</h2>
-        <p className="content-text">Pantonify is a Spotify plug-in that takes someone's top 4 favorite songs from the past month, six months or all time, and turn them into a Pantone color guide-inspired card. 
-        This project was built over the course of two weeks with the use of React, NextJS, Next-Auth, the Spotify API, and other libaries to handle album art and colors.  </p> 
+        <p className="content-text">Pantonify is a Spotify plug-in that takes someone's top 4 favorite songs from the past month, six months or all time, and turns them into a Pantone color guide-inspired card. 
+        This project was built over the course of two weeks with the use of React, NextJS, Next-Auth, the Spotify API, and other libraries to handle album art and colors.  </p> 
         <div className="content-github">
           <a
             href="https://pantonify.herokuapp.com/"
