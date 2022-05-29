@@ -71,7 +71,7 @@ function ItemList(props) {
             },
           }}
         >
-          <h1> My Projects. </h1>
+          <h1> Things I've worked on. </h1>
         </motion.div>
         <div className="dates v-center h-center">
           {" "}
