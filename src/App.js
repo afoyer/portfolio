@@ -21,19 +21,21 @@ function App() {
   return (
     <>
       <Nav />
-      <AnimatePresence exitBeforeEnter>
-        <Switch location={location} key={location.key}>
-          <Route key="photos" path="/photos">
-            <Photos />
-          </Route>
-          <Route key="home" path="/" exact>
-            <Home />
-          </Route>
-          <Route key="404" path="/"></Route>
-        </Switch>
-      </AnimatePresence>
+      <main>
+        <AnimatePresence exitBeforeEnter>
+          <Switch location={location} key={location.key}>
+            <Route key="photos" path="/photos">
+              <Photos />
+            </Route>
+            <Route key="home" path="/" exact>
+              <Home />
+            </Route>
+            <Route key="404" path="/"></Route>
+          </Switch>
+        </AnimatePresence>
 
-      <Footer />
+        <Footer />
+      </main>
     </>
   );
 }

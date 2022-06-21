@@ -98,13 +98,94 @@ export const items = [
           mockup using Figma (as seen above) and plenty of user feedback to
           improve the flow.
         </p>
-        <h2 className="content-tab">Learnings</h2>
+        <h2 className="content-tab">The planning phase</h2>
         <p className="content-text">
-          NextJS was a great tool to learn with since I believe it is used
-          within many major companies. That being said, Pantonify really does
-          not take advantage of server side rendering since it is in essence an
-          SPA disguised as a server application.
+          Early on, I knew that I wanted to create some website utilizing{" "}
+          <a
+            className="linkhover"
+            rel="noopener noreferrer"
+            href="https://developer.spotify.com/documentation/web-api/"
+            target="_blank"
+          >
+            the Spotify API.
+          </a>{" "}
+          The only hurdle I had to pass was figuring out authentication.
+          <br />
+          <br />
+          When I first started learning React, I quickly found out about{" "}
+          <a
+            className="linkhover"
+            rel="noopener noreferrer"
+            href="https://nextjs.org/"
+            target="_blank"
+          >
+            NextJS
+          </a>
+          , a server-sided rendering method for React. I tried to implement with
+          with{" "}
+          <a
+            className="linkhover"
+            rel="noopener noreferrer"
+            href="https://next-auth.js.org/"
+            target="_blank"
+          >
+            NextAuth
+          </a>{" "}
+          which simplifies authentication with OAuth protocols. But before I
+          started with this whole project, I wanted to try out this package on
+          something else: Reddit. That turned out to be a bigger detour than I
+          expected.
         </p>
+        <h2 className="content-tab">
+          Reddit authentication, community contributions, and bug finding
+        </h2>
+        <p className="content-text">
+          Reddit authentication turned out to be way more complex than expected
+          due to the fact that Reddit authentication was not implemented within
+          NextAuth. The reason behind it was that it was a known bug that Reddit
+          would refuse to authenticate with their boilerplate methods.
+        </p>
+        <p className="content-text">
+          After spending some time looking at the source code, I realized that
+          NextAuth was not creating the correct headers for Reddit, which uses a
+          different format for authentication purposes compared to usual OAuth2
+          credentials when making a call.
+        </p>
+        <p className="content-text">
+          After a small{" "}
+          <a
+            className="linkhover"
+            rel="noopener noreferrer"
+            href="https://github.com/nextauthjs/next-auth/pull/1094"
+            target="_blank"
+          >
+            pull request
+          </a>
+          , I managed to get the fix and play around with the package for the
+          actual project.
+        </p>
+        <h2 className="content-tab">Framer motion and responsive design.</h2>
+        <p className="content-text">
+          While I had a bit of experience using Framer Motion with this personal
+          website, the responsive design was more thoroughly thought about
+          compared to the afterthought in this page.
+        </p>
+        <p className="content-text">
+          There were also other considerations such as smooth transitions
+          between the cards which make it a whole lot more complicated since
+          timings have to be more in line.
+        </p>
+        <h2 className="content-tab">Thoughts and reflections a year later</h2>
+        <p className="content-text">
+          This is still one of my proudest projects as it was a completely solo
+          one with a complete timeline from inception to actual product with
+          user feedback. After learning so much more about React since I have
+          been at Amazon I would definitely improve network calls to reduce the
+          load. Currently, changing the time will make a new call instead of
+          using a previously cached one, which is not ideal.
+        </p>
+
+        <p className="content-text">Anyways, check it out below.</p>
         <div className="content-github">
           <a
             href="https://pantonify.herokuapp.com/"

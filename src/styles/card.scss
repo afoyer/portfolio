@@ -87,7 +87,7 @@
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  width: 80%;
+  width: 800px;
   height: 90vh;
 
   @include media("<=phone") {
@@ -149,6 +149,7 @@ above really is only for the expanded card itself while this one has all the inn
         -webkit-mask-image: none;
         mask-image: none;
         width: 100%;
+        padding-bottom: 10%;
       }
     }
 
@@ -181,11 +182,17 @@ above really is only for the expanded card itself while this one has all the inn
     }
   }
 }
+
+.expanded-content{
+  @include media("<=phone") {
+    margin-bottom: 100px;
+  }
+}
 .close-button {
-  position: fixed;
+  position:absolute;
   z-index: 6;
-  top: 5vh;
-  right: 15%;
+  top: 0px;
+  right: 0%;
   width: 50px;
   height: 50px;
   background-color: rgba(255, 255, 255, 0.281);
