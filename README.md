@@ -36,7 +36,7 @@ Link to [website](https://afoyer.github.io/portfolio).
 
 ## Author
 
-&copy; Aymeric Foyer 2020.
+&copy; AF 2020.
 
 Made with a lot of music.
 
