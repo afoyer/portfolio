@@ -11,7 +11,7 @@
   A React Website with heavy use of Framer-Motion
 </p>
 
-Link to [website](https://afoyer.github.io/portfolio).
+<!-- Link to [website](https://afoyer.github.io/portfolio). -->
 
 
 
