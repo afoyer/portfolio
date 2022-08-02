@@ -15,7 +15,6 @@
 
 
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/10fb8b6b-cf38-4d37-b547-f6b2883d9fb6/deploy-status)](https://app.netlify.com/sites/aymericfoyer/deploys)
 
 ## Things I have done on this
 
