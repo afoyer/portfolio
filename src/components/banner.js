@@ -49,7 +49,7 @@ function Banner() {
         </motion.h1>
         <motion.h2 variants={item}>
           I create <br className="mobile-break" />{" "}
-          <SlidingName list={slidedatasub} duration={0.5} />
+          <SlidingName list={slidedatasub} duration={3} infinite />
         </motion.h2>
       </motion.div>
       <motion.div

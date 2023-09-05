@@ -8,5 +8,8 @@ export const slidedatamain = [
 export const slidedatasub = [
   { name: "art.", color: "red" },
   { name: "websites.", color: "#607d8b" },
-  { name: "cool things.", color: "black" },
+  { name: "photos.", color: "#61b960" },
+  { name: "code.", color: "#4096c3" },
+  { name: "designs.", color: "#8059aa" },
+  { name: "cool things.", color: "grey" },
 ];

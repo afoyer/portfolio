@@ -14,16 +14,16 @@ export const items = [
 
   {
     title: "Amazon Web Services",
-    titlecolor: "#ffcc80",
+    titlecolor: "#ffffff",
     background: "#232f3e",
     imgsource: process.env.PUBLIC_URL + "/images/aws/aws",
     backgroundHover: "#232f3e",
     content: (
       <>
         <h1 className="content-header">
-          Polaris, Data Centers, and Monitoring
+          Cloudscape, Data Centers, and Monitoring
         </h1>
-        <h3 className="img-description">Written on 5/29/2022</h3>
+        <h3 className="img-description">Written on 5/29/2022, updated 09/05/2023</h3>
         <p className="content-text">
           I have been working at AWS for the past year working on giving data
           center operators a better way to visualize how their data center is
@@ -35,19 +35,16 @@ export const items = [
           InfraMap is primarily focused on giving that UI and provides the tools
           for operational excellence for data centers globally within AWS.
         </p>
-        <h2 className="content-tab">Technologies I've used</h2>
+        <h2 className="content-tab">Things I've built.</h2>
         <p className="content-text">
-          I learned way more than any other previous experiences from Amazon.
-          From TypeScript to AWS tools to Redux, I built way more components and
-          learned how to code in a more consistent matter. If only I could
-          reapply all this learning to this portfolio...
+          I've been working on a configuration based website builder that, through a JSON file, will
+          create and format a page full of metrics following the cloudscape visual design automatically without further action
+          from the user.
         </p>
         <p className="content-text">
-          That being said, I also learned how to implement custom routing into
-          our application using redux and event listeners to intercept link
-          clicks. I also discovered the whole world of design library with
-          Polaris, the interal AWS library which explains why all of AWS looks
-          the same.
+          This allows for support people to troubleshoot and update various data-centers around the world without developer assistance.
+          I've also created an extensive set of tools using S3, AppSync and Lambda to update these configuration files through an intuitive
+          and quick to use UI instead of going through the regular S3 workflow of deleting files, adding them back, then renaming them correctly.
         </p>
       </>
     ),
@@ -64,7 +61,7 @@ export const items = [
    */
   {
     title: "Pantonify",
-    titlecolor: "#b3e5fc",
+    titlecolor: "#ffffff",
     imgsource: process.env.PUBLIC_URL + "/images/pantonify/pantonify",
     background: "#1DB954",
     backgroundHover: "#1DB954",

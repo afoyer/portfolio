@@ -3,7 +3,6 @@ import Banner from "../components/banner";
 import ItemList from "./../components/ItemList";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Link } from "react-router-dom";
 /**
  * HomePage.
  */
@@ -67,7 +66,7 @@ function Home() {
           <br />
           I am currently a Front End Engineer at <motion.a href='https://aws.amazon.com/' target='_blank' className='linkhover amazon' >Amazon Web Services</motion.a>.
           <br />
-          This webpage was made using <a className="linkhover" href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">
+          This webpage from scratch using <a className="linkhover" href="https://react.dev/" target="_blank" rel="noopener noreferrer">
             ReactJS
           </a>, <a className="linkhover" href="https://www.framer.com/motion/" target="_blank" rel="noopener noreferrer">
            Framer Motion
@@ -75,36 +74,9 @@ function Home() {
           , and the <a className="linkhover" href="https://www.flickr.com/services/api/" target="_blank" rel="noopener noreferrer">
             Flickr API
           </a>.
-          <br />
-          Anyways, this was my first major project after graduating and it was extremely fun to make. I hope you enjoy it too!
           
 
         </motion.h2>
-        
-        <motion.h2
-        className="mail"
-          initial={false}
-          animate={
-            inView
-              ? {
-                  color: "#212121",
-                  opacity: 1,
-                  y: 0,
-                  transition: { duration: 0.5 },
-                }
-              : { opacity: 0, y: 100, transition: { duration: 1 } }
-          }
-        >
-          
-          <Link to="/photos" className="linkhover">
-            Check my photos out.
-          </Link>
-          <br/>
-          <br/>
-          Contact me through socials or through {" "}
-        <a className="linkhover" href="mailto:aymeric.foyer@gmail.com">
-           email
-        </a>.</motion.h2>
       </motion.div>
       <ItemList setColor={toggleColor} />
     </motion.div>
