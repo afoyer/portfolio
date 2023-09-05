@@ -4,7 +4,7 @@
  */
 function Flikr(pagenumber, imagecount) {
   // :)
-  const api_key = process.env.REACT_APP_API_KEY;
+  const api_key = process.env.REACT_APP_FLICKR_KEY;
   const user_id = process.env.REACT_APP_USER_ID;
 
   //Fetch profile's public phot from flickr

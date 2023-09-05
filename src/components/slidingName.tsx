@@ -7,12 +7,12 @@ import { motion } from "framer-motion";
  * @param {*} props.duration sets duration for each transition.
  * @param {*} props.list list of names and colors to transition into.
  */
-function SlidingName(props) {
+function SlidingName(props: { duration: number; list: any[]; infinite: any; }) {
   const variants = {
     hidden: {
       y: 10,
       opacity: 0,
-      transition: { delay: 0.5, duration: props.duration },
+      transition: { delay: 0.5, duration: 0.5 },
     },
     show: {
       y: 0,
@@ -44,7 +44,7 @@ function SlidingName(props) {
       number === index && (
         <motion.span
           key={`${item.name}slide`}
-          onAnimationComplete={cycleNext}
+          onAnimationComplete={()=>cycleNext(props.infinite)}
           variants={variants}
           initial="hidden"
           //have special animation for last element
@@ -60,9 +60,11 @@ function SlidingName(props) {
   /**
    * Goes to next item until list is over.
    */
-  function cycleNext() {
+  function cycleNext(infinite: boolean) {
     if (number !== names.length - 1) {
       setNumber(number + 1);
+    } else if(infinite){
+      setNumber(0)
     }
   }
   return (

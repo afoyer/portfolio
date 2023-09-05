@@ -16,7 +16,8 @@ function App() {
     window.scrollTo(0, 0);
   }, [location]);
   useEffect(() => {
-    console.log("Made by Aymeric Foyer. 2020. \n https://aymericfoyer.com");
+  console.log(`Don't worry. There's no tracking on this site (that I know of...) so here's a yummy, ad-free cookie 🍪`)
+  console.log("Made by Aymeric Foyer. 2023. \n https://aymericfoyer.com");
   }, []);
   return (
     <>
