@@ -18,6 +18,7 @@ function Home() {
   return (
     <motion.div
       className="home"
+      key={"home"}
       initial={false}
       animate={{
         background: color,
@@ -59,23 +60,46 @@ function Home() {
               : { opacity: 0, y: 100, transition: { duration: 1 } }
           }
         >
-          I'm a French/American front-end developer with interests in design, user experiences, and photography. <br/>
-          
-          
-          
+          I'm a French/American front-end developer with interests in design,
+          user experiences, and photography. <br />
+          <br />I am currently a Front End Engineer at{" "}
+          <motion.a
+            href="https://aws.amazon.com/"
+            target="_blank"
+            className="linkhover amazon"
+          >
+            Amazon Web Services
+          </motion.a>
+          .
           <br />
-          I am currently a Front End Engineer at <motion.a href='https://aws.amazon.com/' target='_blank' className='linkhover amazon' >Amazon Web Services</motion.a>.
-          <br />
-          This webpage from scratch using <a className="linkhover" href="https://react.dev/" target="_blank" rel="noopener noreferrer">
+          This webpage from scratch using{" "}
+          <a
+            className="linkhover"
+            href="https://react.dev/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             ReactJS
-          </a>, <a className="linkhover" href="https://www.framer.com/motion/" target="_blank" rel="noopener noreferrer">
-           Framer Motion
           </a>
-          , and the <a className="linkhover" href="https://www.flickr.com/services/api/" target="_blank" rel="noopener noreferrer">
+          ,{" "}
+          <a
+            className="linkhover"
+            href="https://www.framer.com/motion/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Framer Motion
+          </a>
+          , and the{" "}
+          <a
+            className="linkhover"
+            href="https://www.flickr.com/services/api/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Flickr API
-          </a>.
-          
-
+          </a>
+          .
         </motion.h2>
       </motion.div>
       <ItemList setColor={toggleColor} />

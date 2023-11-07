@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion, AnimateSharedLayout } from "framer-motion";
+import { motion } from "framer-motion";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 /**
  * Content at this point only holds the title of the project. it used to hold all content until I changed it to be more modular
@@ -43,17 +43,20 @@ function CompactProjectCard({
   const setColor = () => {
     startColor(data.backgroundHover);
   };
+  const resetColor = () => {
+    if (disabled === false) {
+      endColor();
+    }
+  };
   return (
     <motion.div
       className="card compact"
-      layoutId={`expandable-card${index}`}
       onClick={disabled ? undefined : onExpand}
       onMouseEnter={setColor}
-      onMouseLeave={endColor}
+      onMouseLeave={resetColor}
     >
       <motion.div
         className="title-bg"
-        layoutId="title-bg"
         style={{
           backgroundColor: data.background,
         }}
@@ -61,7 +64,7 @@ function CompactProjectCard({
         <picture>
           <source srcSet={data.imgsource + ".webp"} type="image/webp" />
           <source srcSet={data.imgsource + ".jpg"} type="image/jpeg" />
-          <motion.img layoutId="image" src={data.imgsource} alt={data.title} />
+          <motion.img src={data.imgsource} alt={data.title} />
         </picture>
         {children}
       </motion.div>
@@ -79,11 +82,9 @@ function ExpandedProjectCard({ children, data, onCollapse, index }) {
         id="expanded"
         // animate={{ scale: 1 }}
         className="card expanded"
-        layoutId={`expandable-card${index}`}
       >
         <motion.div
           className="title-bg"
-          layoutId="title-bg"
           onClick={onCollapse}
           style={{
             background: data.background,
@@ -112,7 +113,6 @@ function ExpandedProjectCard({ children, data, onCollapse, index }) {
             <source srcSet={data.imgsource + ".jpg"} type="image/jpeg" />
             <motion.img
               className="expanded-image"
-              layoutId="image"
               src={data.imgsource}
               alt={data.title}
               initial={{ x: 20, opacity: 0 }}
@@ -180,9 +180,9 @@ function ProjectItem({
     setColor(data.background);
   };
   return (
-    <AnimateSharedLayout>
+    <>
       <motion.div className="card-container">
-        {isOpen ? (
+        {isOpen && (
           <ExpandedProjectCard
             onCollapse={collapseDate}
             data={data}
@@ -190,20 +190,19 @@ function ProjectItem({
           >
             <Content data={data} disabled={disabled} />
           </ExpandedProjectCard>
-        ) : (
-          <CompactProjectCard
-            index={number}
-            onExpand={expandDate}
-            disabled={disabled}
-            startColor={startColor}
-            endColor={endColor}
-            data={data}
-          >
-            <Content data={data} disabled={disabled} />
-          </CompactProjectCard>
         )}
+        <CompactProjectCard
+          index={number}
+          onExpand={expandDate}
+          disabled={disabled}
+          startColor={startColor}
+          endColor={endColor}
+          data={data}
+        >
+          <Content data={data} disabled={disabled} />
+        </CompactProjectCard>
       </motion.div>
-    </AnimateSharedLayout>
+    </>
   );
 }
 export default ProjectItem;

@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import Flickr from "../components/flickr";
+import useCache from "../context";
 /**
  * Photos Page.
  */
@@ -8,42 +9,56 @@ function Photos() {
   const imageperpage = 12;
 
   //Setup for infinite scrolling.
-  const [photos, storePhotos] = useState([]);
+  const photos = useCache();
+  const images = photos.cache.images ?? [];
   const [loading, setLoading] = useState(false);
   const [pagenumber, setPage] = useState(1);
   const [hasMore, isHasMore] = useState(true);
-  const observer = useRef();
-
+  const observer = useRef<any>();
   const call = useCallback(
-    (node) => {
+    (node: any) => {
       if (!loading) return;
-      if (observer.current) observer.current.disconnect();
+      if (observer.current) {
+        observer.current.disconnect();
+      }
       observer.current = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting && hasMore) {
           increase();
+          setLoading(false);
+
+          Flickr(pagenumber, imageperpage).then((array) => {
+            //append new image links to previous ones
+            photos.updateFlickr([
+              ...(photos.cache.images ?? []),
+              ...array.photos,
+            ]);
+            //Check if this was last set of images
+            isHasMore(array.photos.length >= imageperpage);
+            setLoading(true);
+          });
         }
       });
       if (node) observer.current.observe(node);
     },
-    [loading, hasMore]
+    [loading, hasMore, photos, pagenumber]
   );
   //Fetch images to display, unset loading state
   useEffect(() => {
     //If all images haven't been loaded yet, go and fetch images
-    if (hasMore) {
+    if (images.length < photos.cache.total) {
       setLoading(false);
 
       Flickr(pagenumber, imageperpage).then((array) => {
         //append new image links to previous ones
-        storePhotos((photos) => {
-          return [...photos, ...array];
-        });
+        photos.updateFlickr([...(photos.cache.images ?? []), ...array.photos]);
         //Check if this was last set of images
-        isHasMore(array.length >= imageperpage);
+        photos.setTotal(array.total);
         setLoading(true);
+        increase();
       });
     }
-  }, [pagenumber, hasMore]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   function increase() {
     setPage((page) => page + 1);
   }
@@ -53,6 +68,7 @@ function Photos() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       className="photos"
+      key={"photos"}
     >
       {/* IMAGES */}
 
@@ -93,13 +109,13 @@ function Photos() {
       </motion.div>
       {/* Photo Div */}
       <motion.div className="imageContainer">
-        {photos.map((photo, index) => {
-          if (index + 1 === photos.length) {
+        {images.map((photo, index) => {
+          if (index + 1 === images.length) {
             return (
               <a
                 ref={call}
                 rel="noreferrer noopener"
-                key={`imageAnchor${photo.id}`}
+                key={`imageAnchor${photo.id}${index}`}
                 href={`https://www.flickr.com/photos/aymericf/${photo.id}`}
                 target="_blank"
               >
@@ -110,7 +126,7 @@ function Photos() {
                   exit={{ opacity: 0 }}
                   className="flickrImage"
                   whileHover={{ scale: 1.05 }}
-                  src={photo.path}
+                  src={photo.srcPath}
                 />
               </a>
             );
@@ -118,7 +134,7 @@ function Photos() {
             return (
               <a
                 rel="noreferrer noopener"
-                key={`imageAnchor${photo.id}`}
+                key={`imageAnchor${photo.id}${index}`}
                 href={`https://www.flickr.com/photos/aymericf/${photo.id}`}
                 target="_blank"
               >
@@ -129,7 +145,7 @@ function Photos() {
                   exit={{ opacity: 0 }}
                   whileHover={{ scale: 1.05 }}
                   className="flickrImage"
-                  src={photo.path}
+                  src={photo.srcPath}
                 />
               </a>
             );

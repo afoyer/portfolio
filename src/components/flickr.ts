@@ -2,7 +2,7 @@
  * Flickr fetches pictures from *my* profile and creates an <img> array
  * with links to images to display (currently 15 per page) with clickable links
  */
-function Flikr(pagenumber, imagecount) {
+function Flikr(pagenumber: number, imagecount: number) {
   // :)
   const api_key = process.env.REACT_APP_FLICKR_KEY;
   const user_id = process.env.REACT_APP_USER_ID;
@@ -16,12 +16,15 @@ function Flikr(pagenumber, imagecount) {
       .then((response) => {
         return response.json();
       })
-      .then((jsonResponse) => {
+      .then(({ photos }) => {
         //Turn json into objects with link and id for anchor link
-        return jsonResponse.photos.photo.map((pic) => {
-          var srcPath = `https://farm${pic.farm}.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}.jpg`;
-          return { path: srcPath, id: pic.id };
-        });
+        return {
+          total: photos.total,
+          photos: photos.photo.map((pic: any) => {
+            var srcPath = `https://farm${pic.farm}.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}.jpg`;
+            return { srcPath, id: pic.id };
+          }),
+        };
       })
   );
 }

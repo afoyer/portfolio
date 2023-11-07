@@ -39,9 +39,9 @@ function MenuItem(props) {
           <motion.h3
             whileHover={{
               color: "#212121",
-              backgroundColor: props.backgroundSelectColor,
+              backgroundColor: "white",
 
-              boxShadow: "0px 5px 15px 0px #fffff",
+              boxShadow: "0px 5px 15px 0px white",
             }}
             whileTap={{
               color: "#424242",
@@ -68,7 +68,7 @@ function MenuItem(props) {
               color: "#212121",
               backgroundColor: props.backgroundSelectColor,
 
-              boxShadow: "0px 5px 15px 0px #fffff",
+              boxShadow: "0px 5px 15px 0px white",
             }}
             whileTap={{
               color: "#424242",

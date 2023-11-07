@@ -74,19 +74,18 @@ function ItemList(props) {
           <h1> Things I've worked on. </h1>
         </motion.div>
         <div className="dates v-center h-center">
-          {" "}
           {items.map((item, index) => (
             <ProjectItem
               key={index}
               number={index}
               data={item}
               setColor={props.setColor}
-              disabled={expandedDay !== index && expandedDay !== undefined}
+              disabled={expandedDay !== undefined}
               onExpand={() => setCollapsedDay(index)}
               onCollapse={() => setCollapsedDay()}
             />
-          ))}{" "}
-        </div>{" "}
+          ))}
+        </div>
       </motion.div>
     </div>
   );

@@ -54,17 +54,8 @@ function Nav() {
       className="addOnMenu"
       exit={{ transition: { staggerChildren: 0.1 } }}
     >
-      <MenuItem
-        name="PHOTO"
-        link="/photos"
-        backgroundSelectColor="rgba(255,255,255,1)"
-      />
-      <MenuItem
-        name="RESUME"
-        isAnchor="true"
-        link="/resume.pdf"
-        backgroundSelectColor="rgba(255,255,255,1)"
-      ></MenuItem>
+      <MenuItem name="PHOTO" link="/photos" />
+      <MenuItem name="RESUME" isAnchor="true" link="/resume.pdf" />
     </motion.div>
   );
   return (
