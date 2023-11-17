@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import Flickr from "../components/flickr";
 import useCache from "../context";
+import "./styles/photos.scss";
 /**
  * Photos Page.
  */
@@ -137,6 +138,7 @@ function Photos() {
                 key={`imageAnchor${photo.id}${index}`}
                 href={`https://www.flickr.com/photos/aymericf/${photo.id}`}
                 target="_blank"
+                className="photo-anchor"
               >
                 <motion.img
                   key={photo.id}
@@ -147,6 +149,7 @@ function Photos() {
                   className="flickrImage"
                   src={photo.srcPath}
                 />
+                <p className="photo-description">{photo.title}</p>
               </a>
             );
           }

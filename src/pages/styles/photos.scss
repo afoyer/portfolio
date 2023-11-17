@@ -1,0 +1,28 @@
+
+
+.photo-anchor{
+    position: relative;
+    .photo-description{
+        position: absolute;
+        top: auto;
+        bottom: 5px;
+        padding-bottom: 0px;
+        margin-bottom: 0;
+        text-decoration: none;
+        text-emphasis: none;
+        color: white;
+        opacity: 0;
+        padding: 10px;
+        padding-bottom: 0;
+        transition: all .2s ease-in-out;
+        border-radius: 5px;
+    }
+    &:hover{
+        .photo-description{
+            background: rgba($color: #000000, $alpha: 0.2);
+            backdrop-filter: blur(10px);
+            opacity: 1;
+            padding-bottom: 10px;
+        }
+    }
+}

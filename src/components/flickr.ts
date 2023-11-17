@@ -10,7 +10,7 @@ function Flikr(pagenumber: number, imagecount: number) {
   //Fetch profile's public phot from flickr
   return (
     fetch(
-      `https://www.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=${api_key}&user_id=${user_id}&format=json&nojsoncallback=?&per_page=${imagecount}&page=${pagenumber}`
+      `https://www.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=${api_key}&user_id=${user_id}&extras=tags&format=json&nojsoncallback=?&per_page=${imagecount}&page=${pagenumber}`
     )
       //turn into json
       .then((response) => {
@@ -22,7 +22,7 @@ function Flikr(pagenumber: number, imagecount: number) {
           total: photos.total,
           photos: photos.photo.map((pic: any) => {
             var srcPath = `https://farm${pic.farm}.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}.jpg`;
-            return { srcPath, id: pic.id };
+            return { srcPath, id: pic.id, title: pic.title };
           }),
         };
       })

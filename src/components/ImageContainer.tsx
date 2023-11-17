@@ -5,11 +5,23 @@ import React from "react";
  * Currently defaults to webp then falls back to specified file type (makes sure jpg is jpeg type too)
  * @param {*} param0
  */
-function ImageContainer({ name, second, alt, cssclass, path }) {
+function ImageContainer({
+  name,
+  fileType,
+  alt,
+  cssclass,
+  path,
+}: {
+  name: string;
+  fileType: string;
+  alt: string;
+  cssclass: string;
+  path: string;
+}) {
   return (
     <a
       rel="noopener noreferrer"
-      href={process.env.PUBLIC_URL + path + name + `.${second}`}
+      href={process.env.PUBLIC_URL + path + name + `.${fileType}`}
       target="_blank"
     >
       <picture>
@@ -19,14 +31,14 @@ function ImageContainer({ name, second, alt, cssclass, path }) {
           type="image/webp"
         />
         <source
-          srcSet={process.env.PUBLIC_URL + path + name + `.${second}`}
-          type={`image/${second === "jpg" ? "jpeg" : second}`}
+          srcSet={process.env.PUBLIC_URL + path + name + `.${fileType}`}
+          type={`image/${fileType === "jpg" ? "jpeg" : fileType}`}
           className={cssclass}
         />
 
         <img
           className={cssclass}
-          src={process.env.PUBLIC_URL + path + name + `.${second}`}
+          src={process.env.PUBLIC_URL + path + name + `.${fileType}`}
           alt={alt}
         />
       </picture>

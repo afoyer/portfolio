@@ -8,7 +8,11 @@ type SetTotalAction = {
   payload: number;
 };
 
-export type FlickrLinks = { srcPath: string; id: string }[];
+export type FlickrLinks = {
+  srcPath: string;
+  id: string;
+  title: string;
+}[];
 
 const cacheReducer = (
   state: Record<string, unknown> & { images: FlickrLinks; total: number },
