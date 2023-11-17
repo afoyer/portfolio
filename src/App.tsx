@@ -8,6 +8,7 @@ import Photos from "./pages/Photos";
 
 import Footer from "./components/Footer";
 import { CacheProvider } from "./context";
+import PdfPage from "./pages/pdf-page";
 
 function App() {
   const location = useLocation();
@@ -33,6 +34,7 @@ function App() {
               path="/photos"
               element={<Photos key={"photos"} />}
             />
+            <Route key="resume" path="/resume" element={<PdfPage />} />
 
             <Route key="404" path="/" />
           </Routes>

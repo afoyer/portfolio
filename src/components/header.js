@@ -55,7 +55,7 @@ function Nav() {
       exit={{ transition: { staggerChildren: 0.1 } }}
     >
       <MenuItem name="PHOTO" link="/photos" />
-      <MenuItem name="RESUME" isAnchor="true" link="/resume.pdf" />
+      <MenuItem name="RESUME" link="/resume" />
     </motion.div>
   );
   return (
