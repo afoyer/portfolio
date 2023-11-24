@@ -11,5 +11,5 @@ export const slidedatasub = [
   { name: "photos.", color: "#61b960" },
   { name: "code.", color: "#4096c3" },
   { name: "designs.", color: "#8059aa" },
-  { name: "cool things.", color: "grey" },
+  { name: "various things.", color: "grey" },
 ];
