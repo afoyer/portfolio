@@ -48,33 +48,11 @@ function Banner() {
           <SlidingName list={slidedatamain} duration={0.5} />
         </motion.h1>
         <motion.h2 variants={item}>
-          I create <br className="mobile-break" />{" "}
+          I <br className="mobile-break" />{" "}
           <SlidingName list={slidedatasub} duration={3} infinite />
         </motion.h2>
       </motion.div>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { delay: 3 } }}
-        exit={{ opacity: 0 }}
-        className="arrow-down"
-      >
-        <motion.a>
-          <motion.svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="feather feather-chevron-down"
-            animate={{ y: 10 }}
-            transition={{ yoyo: Infinity, duration: 1 }}
-          >
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </motion.svg>{" "}
-        </motion.a>
-      </motion.div>
+
       {/* You might be wondering. Why not use ImageContainer? Because ImageContainer renders non-motion img. */}
       <motion.picture
         initial={{ opacity: 0, y: 80 }}

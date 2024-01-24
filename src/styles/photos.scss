@@ -4,7 +4,7 @@
   position: relative;
   width: 100%;
   padding-bottom: 10px;
-  min-height: 100%;
+  min-height: 100vh;
   background-color: #212121;
   @include media("<=phone") {
     font-size: 1.5rem;

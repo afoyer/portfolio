@@ -41,11 +41,6 @@ function Footer() {
           </svg>
         </a>
       </motion.div>
-      <h2 className="sourcecode">
-        <a className="linkhover" href="https://github.com/afoyer/portfolio">
-          source code
-        </a>
-      </h2>
     </motion.footer>
   );
 }

@@ -6,10 +6,9 @@ export const slidedatamain = [
   { name: "I am Aymeric.", color: "black" },
 ];
 export const slidedatasub = [
-  { name: "art.", color: "red" },
-  { name: "websites.", color: "#607d8b" },
-  { name: "photos.", color: "#61b960" },
+  { name: "take photos.", color: "red" },
+  { name: "build websites.", color: "#607d8b" },
   { name: "code.", color: "#4096c3" },
-  { name: "designs.", color: "#8059aa" },
-  { name: "various things.", color: "grey" },
+  { name: "create designs.", color: "#8059aa" },
+  { name: "work for AWS.", color: "#F9A825" },
 ];
